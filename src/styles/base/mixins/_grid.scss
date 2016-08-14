@@ -1,0 +1,17 @@
+@mixin make-grid-columns($columns: $grid-columns, $gutter: $grid-gutter-width) {
+  %col {
+    padding-left: ($gutter / 2);
+    padding-right: ($gutter / 2);
+    float: left;
+    position: relative;
+    min-height: 1px;
+  }
+
+
+  @for $i from 1 through $columns {
+    .col-#{$i} {
+      @extend %col;
+      width: percentage($i / $columns);
+    }
+  }
+}

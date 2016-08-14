@@ -1,0 +1,20 @@
+.cover {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.img-circle {
+  border-radius: 50%;
+}
+
+.figure {
+  // Ensures the caption's text aligns with the image.
+  display: inline-block;
+}
+
+.figure-img {
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+

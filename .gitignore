@@ -10,4 +10,4 @@ build
 .DS_Store
 npm-debug.log
 
-dist
+src/dist

@@ -1,0 +1,21 @@
+.list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.anchor-list {
+  @extend .list;
+
+  > li {
+    margin-bottom: .6rem;
+
+    &.header {
+      font-weight: 500;
+    }
+
+    > a {
+      display: block;
+      font-size: $font-size-base * .9;
+    }
+  }
+}

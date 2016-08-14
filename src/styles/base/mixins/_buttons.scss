@@ -1,0 +1,44 @@
+@mixin button-variant($color, $text-color: #FFF) {
+  background: $color;
+  color: $text-color;
+  border-color: $color;
+
+  &:hover,
+  &.focus {
+    border-color: lighten($color, 4%);
+    background: lighten($color, 4%);
+  }
+
+
+  &:active,
+  &.active {
+    border-color: lighten($color, 8%);
+    background: lighten($color, 8%);
+  }
+}
+
+@mixin button-outline-variant($color, $fill:false, $fill-text-color: #FFF) {
+  background: none;
+  border: 1px solid $color;
+  color: $color;
+
+  @if $fill {
+
+    &:hover {
+      background: $color;
+      color: $fill-text-color;
+    }
+
+  } @else {
+    &:hover,
+    &:focus {
+      color: lighten($color, 8%);
+      border-color: lighten($color, 8%);
+    }
+
+    &:active,
+    &.active {
+      border-color: lighten($color, 20%);
+    }
+  }
+}

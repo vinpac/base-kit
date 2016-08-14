@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 const Counter = ({ count, onClick }) => {
   return (
     <div>
-      <button onClick={onClick}>{ count }</button>
+      <button className="btn btn-outline-primary" onClick={onClick}>{ count }</button>
     </div>
   )
 }

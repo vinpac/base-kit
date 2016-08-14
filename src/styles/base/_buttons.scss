@@ -1,0 +1,44 @@
+.btn {
+  display: inline-block;
+  font-weight: $btn-font-weight;
+  line-height: $btn-line-height;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid;
+  padding: $btn-padding-y $btn-padding-x;
+  font-size: $font-size-base;
+  border-radius: $btn-border-radius;
+  outline: none !important;
+}
+
+.btn-primary {
+  @include button-variant($color-primary);
+}
+
+.btn-outline-primary {
+  @include button-outline-variant($color-primary);
+}
+
+.btn-accent {
+  @include button-variant($color-accent);
+}
+
+.btn-outline-accent {
+  @include button-outline-variant($color-accent);
+}
+
+.btn-success {
+  @include button-variant(#60BB4D);
+}
+
+.btn-outline-accent {
+  @include button-outline-variant($color-accent);
+}
+
+.btn-sm {
+  padding: ($btn-padding-y * .75) ($btn-padding-x * .75);
+  font-size: 14px;
+}
