@@ -1,0 +1,101 @@
+@mixin navbar($color, $text-color: #FFF) {
+  background-color: $color;
+  color: $text-color;
+
+  .navbar-brand {
+    color: $text-color;
+  }
+
+  .navbar-nav {
+    .nav-link {
+      color: rgba($text-color, .6);
+
+      &:hover {
+        color: rgba($text-color, .8);
+      }
+
+      &:active,
+      &.active {
+        color: $text-color;
+      }
+    }
+  }
+}
+
+.navbar {
+  @include clearfix();
+  position: relative;
+  padding: .5rem 1rem;
+}
+
+.navbar-brand {
+  float: left;
+  font-size: 1.25rem;
+  padding-top: .235rem;
+  padding-bottom: .235rem;
+  margin-right: .5rem;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: $text-color;
+  }
+}
+
+.nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  > a {
+    display: inline-block;
+  }
+}
+
+.nav-link,
+.nav-item {
+  display: inline-block;
+}
+
+.nav-inline {
+  > a,
+  .nav-item,
+  .nav-link {
+    margin-right: .8rem;
+  }
+}
+
+.nav-link {
+  display: inline-block;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+.navbar-nav {
+  > li,
+  .nav-item {
+    margin-left: .4rem;
+    float: left;
+    display: inline-block;
+  }
+
+  .nav-link {
+    display: block;
+    padding: .425rem;
+  }
+
+  > li > a {
+    @extend .nav-link;
+  }
+}
+
+.navbar-default {
+  @include navbar(null, $text-color);
+}
+
+.navbar-btn {
+  padding: .5rem 1rem;
+}

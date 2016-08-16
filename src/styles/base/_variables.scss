@@ -7,7 +7,7 @@ $color-primary-dark: #026DC5 !default;
 $color-accent: #E91E63 !default;
 
 // Containers
-$container-width: 1000px;
+$container-width: 1100px;
 $container-sm-width: 400px;
 $container-md-width: 600px;
 $container-lg-width: 800px;
@@ -37,8 +37,8 @@ $grid-columns: 12 !default;
 $grid-gutter-width: 20px !default;
 
 // Buttons
-$btn-padding-y: 10px !default;
-$btn-padding-x: 14px !default;
+$btn-padding-y: .5rem !default;
+$btn-padding-x: 1rem !default;
 $btn-line-height: 1.25 !default;
 $btn-border-radius: 4px !default;
 $btn-font-weight: 500 !default;
