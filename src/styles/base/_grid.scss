@@ -1,1 +1,13 @@
 @include make-grid-columns();
+@include make-row();
+
+.container {
+  @include make-container();
+  @include make-container-max-widths();
+
+  @each $breakpoint, $container-max-width in $container-max-widths {
+    &-#{$breakpoint} {
+      max-width: $container-max-width;
+    }
+  }
+}

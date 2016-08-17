@@ -1,2 +1,46 @@
 @import 'variables';
 @import 'base';
+
+.section-padding {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.paragraph {
+  line-height: 1.7rem
+}
+
+.article {
+  min-height: 720px;
+  background: #2BDE73;
+}
+
+.article-text-content {
+  max-width: 530px;
+  float: right;
+  padding-top: 70px;
+}
+
+.article {
+  .img-cover {
+    background-image: url(https://67.media.tumblr.com/d4fc5d8a1be21248dbe2298a64365341/tumblr_obwh5b4dJ41qz7t0xo1_1280.jpg);
+    height: 340px;
+  }
+
+  .article-content {
+    padding: 40px 66px;
+    color: #fff;
+    font-size: 1.3em;
+    line-height: 2rem;
+  }
+}
+
+.bg-blue {
+  min-height: 500px;
+  background: #EEF6F9
+}
+
+.article-2 {
+  background: #E02A86;
+  height: 400px;
+}

@@ -1,5 +1,9 @@
 .text-muted {
-  color: #999;
+  color: $text-muted-color;
+}
+
+.text-pre-muted {
+  color: $text-pre-muted-color;
 }
 
 .text-normal {
@@ -12,4 +16,9 @@
 
 .text-center {
   text-align: center;
+}
+
+.text-lg {
+  font-size: 1.37em;
+  line-height: 2.33rem;
 }

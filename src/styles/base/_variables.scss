@@ -6,11 +6,22 @@ $color-primary: #007ee5 !default;
 $color-primary-dark: #026DC5 !default;
 $color-accent: #E91E63 !default;
 
-// Containers
-$container-width: 1100px;
-$container-sm-width: 400px;
-$container-md-width: 600px;
-$container-lg-width: 800px;
+// Variables
+$grid-breakpoints: (
+  xs: 0,
+  sm: 544px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+// Grid containers
+$container-max-widths: (
+  sm: 576px,
+  md: 720px,
+  lg: 940px,
+  xl: 1140px
+) !default;
 
 // Font
 $font-family-base: Arial, Helvetica, sans-serif !default;
@@ -34,7 +45,7 @@ $headings-color: inherit !default;
 
 // Grid
 $grid-columns: 12 !default;
-$grid-gutter-width: 20px !default;
+$grid-gutter-width: 30px !default;
 
 // Buttons
 $btn-padding-y: .5rem !default;
@@ -58,6 +69,12 @@ $link-decoration: none !default;
 $link-hover-color: $link-color !default;
 $link-hover-decoration: underline !default;
 
-// Utils
-$util-margin-horizontal: 1rem;
-$util-margin-vertical: 2rem;
+// Utilities
+$util-margin-horizontal: 1rem !default;
+$util-margin-vertical: 2rem !default;
+
+$text-pre-muted-color: #666 !default;
+$text-muted-color: #999 !default;
+
+$hr-color: rgba(0,0,0,.1);
+$hr-muted-color: rgba(0,0,0,.05);
