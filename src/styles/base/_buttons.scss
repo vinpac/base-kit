@@ -38,7 +38,12 @@
   @include button-outline-variant($color-accent);
 }
 
-.btn-sm {
+.btn.small {
   padding: ($btn-padding-y * .75) ($btn-padding-x * .75);
   font-size: 14px;
+}
+
+.btn-transparent  {
+  background: rgba(#FFF, 0);
+  border-color: rgba(#FFF, 0);
 }

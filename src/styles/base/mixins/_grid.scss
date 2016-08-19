@@ -1,17 +1,74 @@
+@mixin make-row($gutter: $grid-gutter-width) {
+  @if $enable-flex {
+    display: flex;
+    flex-wrap: wrap;
+  } @else {
+    @include clearfix();
+  }
+  margin-left:  ($gutter / -2);
+  margin-right: ($gutter / -2);
+}
+
+@mixin make-container($gutter: $grid-gutter-width) {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left:  ($gutter / 2);
+  padding-right: ($gutter / 2);
+  @if not $enable-flex {
+    @include clearfix();
+  }
+}
+
+@mixin make-container-max-widths($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints) {
+  @each $breakpoint, $container-max-width in $max-widths {
+    @include media-breakpoint-up($breakpoint, $breakpoints) {
+      max-width: $container-max-width;
+    }
+  }
+}
+
+@mixin make-col($size, $columns: $grid-columns, $gutter: $grid-gutter-width) {
+  @if $enable-flex {
+    flex: 0 0 percentage($size / $columns);
+    max-width: percentage($size / $columns);
+  } @else {
+    float: left;
+    width: percentage($size / $columns);
+  }
+}
+
 @mixin make-grid-columns($columns: $grid-columns, $gutter: $grid-gutter-width) {
-  %col {
+  %grid-column {
     padding-left: ($gutter / 2);
     padding-right: ($gutter / 2);
     float: left;
     position: relative;
     min-height: 1px;
+
+    @if $enable-flex {
+      width: 100%;
+    }
+  }
+
+  %grid-flex-column {
+    position: relative;
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+    min-height: 1px;
+    padding-right: ($grid-gutter-width / 2);
+    padding-left:  ($grid-gutter-width / 2);
+  }
+
+  .col-md {
+    @extend %grid-flex-column;
   }
 
 
   @for $i from 1 through $columns {
     .col-#{$i} {
-      @extend %col;
-      width: percentage($i / $columns);
+      @extend %grid-column;
+      @include make-col($i, $columns, $grid-gutter-width);
     }
   }
 
@@ -29,30 +86,6 @@
       @media (min-width: 768px) {
         margin-left: percentage($i / $columns);
       }
-    }
-  }
-}
-
-
-@mixin make-row($gutter: $grid-gutter-width) {
-  .row{
-    @include clearfix();
-    margin-left:  ($gutter / -2);
-    margin-right: ($gutter / -2);
-  }
-}
-
-@mixin make-container($gutter: $grid-gutter-width) {
-  margin-left: auto;
-  margin-right: auto;
-  padding-left:  ($gutter / 2);
-  padding-right: ($gutter / 2);
-}
-
-@mixin make-container-max-widths($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints) {
-  @each $breakpoint, $container-max-width in $max-widths {
-    @include media-breakpoint-up($breakpoint, $breakpoints) {
-      max-width: $container-max-width;
     }
   }
 }

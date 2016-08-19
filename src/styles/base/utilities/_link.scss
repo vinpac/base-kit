@@ -1,0 +1,9 @@
+.muted-link {
+  color: $text-muted-color;
+
+  &:hover,
+  &:focus {
+    color: darken($text-muted-color, 20%);
+    text-decoration: none;
+  }
+}

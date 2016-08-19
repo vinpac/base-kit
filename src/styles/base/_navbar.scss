@@ -69,10 +69,6 @@
     display: block;
     padding: .425rem;
   }
-
-  > li > a {
-    @extend .nav-link;
-  }
 }
 
 .navbar-default {

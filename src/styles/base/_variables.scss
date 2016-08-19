@@ -1,6 +1,9 @@
 // Base variables
 // Variables with !default are overwritten by the app's variables
 
+// Enable flex
+$enable-flex: true;
+
 // Colors
 $color-primary: #007ee5 !default;
 $color-primary-dark: #026DC5 !default;
@@ -20,7 +23,7 @@ $container-max-widths: (
   sm: 576px,
   md: 720px,
   lg: 940px,
-  xl: 1140px
+  xl: 1200px
 ) !default;
 
 // Font
@@ -63,6 +66,10 @@ $input-lg-font-size: 20px !default;
 $input-lg-padding-y: .67rem !default;
 $input-lg-padding-x: .8rem !default;
 
+// Dropdown
+$dropdown-item-padding-x: 1.4rem;
+$dropdown-item-padding-y: .38rem;
+
 // link
 $link-color: #007ee5 !default;
 $link-decoration: none !default;
@@ -78,3 +85,5 @@ $text-muted-color: #999 !default;
 
 $hr-color: rgba(0,0,0,.1);
 $hr-muted-color: rgba(0,0,0,.05);
+
+$text-semibold-weight: 600;
