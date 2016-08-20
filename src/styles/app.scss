@@ -43,10 +43,6 @@
   height: 400px;
 }
 
-p {
-  line-height: 1.7
-}
-
 .around-xs {
   justify-content: space-around;
   flex-pack: distribute;
@@ -87,4 +83,12 @@ p {
   }
 }
 
+
+.modal-post {
+  .modal-post-header {
+    .btn {
+      height: 45px;
+    }
+  }
+}
 

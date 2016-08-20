@@ -4,6 +4,23 @@ export default class App extends Component {
   render() {
     return (
       <div>
+        <div className="modal modal-post ">
+          <div className="modal-content">
+            <div className="modal-post-header">
+              <button className="btn btn-transparent text-semibold text-sm">vini175pa <i className="fa fa-angle-down margin-left-sm" /></button>
+              <button className="btn btn-transparent text-muted right"><i className="fa fa-cog" /></button>
+            </div>
+            <div className="modal-body">
+              <h1>Google</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error veniam, incidunt veritatis quia eaque nostrum dolor adipisci illo quibusdam placeat alias cupiditate debitis sint aut aperiam, expedita consequatur quasi deserunt.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error veniam, incidunt veritatis quia eaque nostrum dolor adipisci illo quibusdam placeat alias cupiditate debitis sint aut aperiam, expedita consequatur quasi deserunt.</p>
+            </div>
+            <div className="modal-footer">
+              <button className="btn small btn-outline-default">Cancel</button>
+              <button className="btn small btn-primary right">Publish</button>
+            </div>
+          </div>
+        </div>
         <header className="header">
           <div className="container">
             <header className="navbar-default navbar">
@@ -11,7 +28,7 @@ export default class App extends Component {
               <ul className="nav navbar-nav">
                 <li><a className="nav-link active" href="">Features</a></li>
                 <li><a className="nav-link" href="">Pricing</a></li>
-                <li className="dropdown active">
+                <li className="dropdown">
                   <a className="nav-link" href="">More <i className="fa fa-angle-down"></i></a>
                   <div className="dropdown-menu">
                     <a href="" className="dropdown-link">Create Page</a>
@@ -30,9 +47,12 @@ export default class App extends Component {
                 </li>
               </ul>
               <ul className="nav navbar-nav right">
-                <li className="dropdown active">
+                <li className="dropdown">
                   <a className="nav-link" href="#">Notifications <i className="fa fa-angle-down"></i></a>
                   <div className="dropdown-menu notifications">
+                    <div className="dropdown-item medium">
+                      <span className="text-muted text-semibold">Notifications</span>
+                    </div>
                     <a href="" className="dropdown-item notification medium">
                       <img src="https://66.media.tumblr.com/avatar_028a20ac89e4_64.png" className="img-circle" alt=""/>
                       <p><b className="text-semibold">John Doe</b> started following you</p>

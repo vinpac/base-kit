@@ -29,10 +29,12 @@ $container-max-widths: (
 // Font
 $font-family-base: Arial, Helvetica, sans-serif !default;
 $line-height-base: 1.5 !default;
+$line-height-paragraph: 1.7 !default;
 $font-size-root: 16px !default;
 $font-size-base: 16px !default;
 $text-color: #333 !default;
 $body-bg: #FFF !default;
+
 
 $font-size-h1: 2.5rem !default;
 $font-size-h2: 2rem !default;
@@ -54,8 +56,11 @@ $grid-gutter-width: 30px !default;
 $btn-padding-y: .5rem !default;
 $btn-padding-x: 1rem !default;
 $btn-line-height: 1.25 !default;
-$btn-border-radius: 4px !default;
-$btn-font-weight: 500 !default;
+$btn-border-radius: 3px !default;
+$btn-font-weight: 600 !default;
+
+$btn-default-color: #9DA6AF;
+$btn-success-color: #60BB4D;
 
 // Forms
 $input-padding-x: .75rem !default;
@@ -69,6 +74,12 @@ $input-lg-padding-x: .8rem !default;
 // Dropdown
 $dropdown-item-padding-x: 1.4rem;
 $dropdown-item-padding-y: .38rem;
+$dropdown-border-radius: 4px;
+
+// Modal
+$modal-backdrop-bg: rgba(#567, .8) !default;
+$modal-padding-x: 1.25rem !default;
+$modal-padding-y: 1rem !default;
 
 // link
 $link-color: #007ee5 !default;

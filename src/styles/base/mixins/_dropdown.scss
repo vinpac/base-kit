@@ -8,8 +8,8 @@
   .dropdown-menu {
     position: absolute;
     background: $color;
-    border-radius: 4px;
-    box-shadow: 0 1px 2px rgba(0,0,0,.25),0 0 1px rgba(0,0,0,.35);
+    border-radius: $dropdown-border-radius;
+    box-shadow: 0 1px 2px rgba(0,0,0,.25), 0 0 1px rgba(0,0,0,.35);
     z-index: 10;
     min-width: 130px;
     left: -10px;
@@ -55,6 +55,12 @@
     &.medium {
       padding-top: .8rem;
       padding-bottom: .8rem;
+    }
+  }
+
+  a.dropdown-item {
+    &:hover {
+      background: rgba(0,0,0,.03);
     }
   }
 

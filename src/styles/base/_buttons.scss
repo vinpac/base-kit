@@ -30,8 +30,16 @@
   @include button-outline-variant($color-accent);
 }
 
+.btn-default {
+  @include button-variant($btn-default-color);
+}
+
+.btn-outline-default {
+  @include button-outline-variant($btn-default-color, true);
+}
+
 .btn-success {
-  @include button-variant(#60BB4D);
+  @include button-variant($btn-success-color);
 }
 
 .btn-outline-accent {
@@ -39,8 +47,13 @@
 }
 
 .btn.small {
-  padding: ($btn-padding-y * .75) ($btn-padding-x * .75);
-  font-size: 14px;
+  padding: ($btn-padding-y * .9) ($btn-padding-x * .9);
+  font-size: .875rem;
+}
+
+.btn.medium {
+  padding: ($btn-padding-y * 1.125) ($btn-padding-x * 1.125);
+  font-size: 1.125rem;
 }
 
 .btn-transparent  {

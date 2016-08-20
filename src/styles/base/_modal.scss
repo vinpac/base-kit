@@ -1,0 +1,34 @@
+.modal {
+  background: $modal-backdrop-bg;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 500;
+  padding: 80px 0;
+  display: none;
+
+  &.active {
+    display: block;
+  }
+
+  .modal-content {
+    background: #fff;
+    border-radius: 3px;
+    width: 540px;
+    min-height: 100px;
+    margin: 0 auto;
+  }
+
+  .modal-footer,
+  .modal-header {
+    padding: $modal-padding-y $modal-padding-x;
+  }
+
+  .modal-body {
+    padding-left: $modal-padding-x;
+    padding-right: $modal-padding-x;
+  }
+
+}
