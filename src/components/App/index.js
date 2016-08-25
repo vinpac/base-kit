@@ -1,17 +1,18 @@
 import React, { Component } from 'react'
+import Modal from '../Modal'
 
 export default class App extends Component {
   render() {
     return (
       <div>
-        <div className="modal modal-post ">
+        <Modal className="modal-post" ref="modal">
           <div className="modal-content">
             <div className="modal-post-header">
               <button className="btn btn-transparent text-semibold text-sm">vini175pa <i className="fa fa-angle-down margin-left-sm" /></button>
               <button className="btn btn-transparent text-muted right"><i className="fa fa-cog" /></button>
             </div>
-            <div className="modal-body">
-              <h1>Google</h1>
+            <img src="https://67.media.tumblr.com/2af43f6ba6e3da9390722394e68c16cc/tumblr_oc5czpi6i51qz7t0xo1_540.jpg" className="fill-width" alt=""/>
+            <div className="modal-body margin-top">
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error veniam, incidunt veritatis quia eaque nostrum dolor adipisci illo quibusdam placeat alias cupiditate debitis sint aut aperiam, expedita consequatur quasi deserunt.</p>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error veniam, incidunt veritatis quia eaque nostrum dolor adipisci illo quibusdam placeat alias cupiditate debitis sint aut aperiam, expedita consequatur quasi deserunt.</p>
             </div>
@@ -20,7 +21,7 @@ export default class App extends Component {
               <button className="btn small btn-primary right">Publish</button>
             </div>
           </div>
-        </div>
+        </Modal>
         <header className="header">
           <div className="container">
             <header className="navbar-default navbar">
@@ -79,6 +80,12 @@ export default class App extends Component {
             <div className="container-md text-center">
               <h2 className="margin-top-lg text-light">About Stripe</h2>
               <p className="text-md text-muted">Stripe is the best way to accept payments online and in mobile apps. We handle billions of dollars every year for forward-thinking businesses around the world.</p>
+              <button
+                className="btn btn-lg btn-primary"
+                onClick={() => this.refs.modal.toggle() }
+                >
+                Open modal
+              </button>
             </div>
           </div>
         </header>

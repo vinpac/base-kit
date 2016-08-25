@@ -1,16 +1,26 @@
+.modal-open{
+  overflow: hidden;
+}
+
 .modal {
-  background: $modal-backdrop-bg;
   position: fixed;
   left: 0;
   right: 0;
   bottom: 0;
   top: 0;
   z-index: 500;
-  padding: 80px 0;
-  display: none;
+  transition: background .2s;
+  height: 0;
+  width: 0;
+  overflow: hidden;
 
-  &.active {
+  &.open {
+    width: auto;
+    height: auto;
+    overflow-y: auto;
     display: block;
+    padding: 60px 0;
+    background: $modal-backdrop-bg;
   }
 
   .modal-content {
