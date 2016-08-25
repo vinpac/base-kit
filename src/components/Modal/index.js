@@ -2,21 +2,23 @@ import React from 'react'
 import cx from 'classnames'
 import ReactDOM from 'react-dom'
 import { classNamesToObject } from '../../utils/text-utils'
-import { getScrollbarSize } from '../../utils/dom-utils';
+import { getScrollbarSize } from '../../utils/dom-utils'
 
-export default class Modal extends React.Component {
+class Modal extends React.Component {
 
   static defaultProps = {
     containerNode: document.body,
     closeOnOutclick: true,
-    fillScrollSpace: true
+    fillScrollSpace: true,
+    transitionTime: 100
   }
 
   constructor(props) {
     super(props);
 
     this.state = {
-      isOpen: false
+      isOpen: false,
+      inTransition: false
     }
 
     this.toggle = this.toggle.bind(this);
@@ -28,11 +30,11 @@ export default class Modal extends React.Component {
   }
 
   toggle(e) {
-    const { containerNode, closeOnOutclick, fillScrollSpace } = this.props
+    const { containerNode, fillScrollSpace } = this.props
     let { isOpen } = this.state
     isOpen = !isOpen
 
-    if (closeOnOutclick && e && e.target) {
+    if (e && e.target) {
       try {
         const node = ReactDOM.findDOMNode(this.refs.modal)
         if (node.contains(e.target) && node !== e.target)
@@ -53,28 +55,36 @@ export default class Modal extends React.Component {
     }
 
     this.setState({
-      isOpen: isOpen
+      isOpen: isOpen,
+      inTransition: !isOpen
     })
+
+    if (!isOpen) {
+      setTimeout(() => this.setState({ inTransition: false }), this.props.transitionTime);
+    }
   }
 
   get className() {
     const { className } = this.props
-    const { isOpen } = this.state
+    const { isOpen, inTransition } = this.state
     return cx(
       'modal',
       {
-        'open': isOpen
+        'open': isOpen,
+        'closed': !isOpen && inTransition
       },
       className
     )
   }
 
   render() {
-    const { children } = this.props
+    const { children, closeOnOutclick } = this.props
     return (
-      <div ref="modal" className={ this.className } onClick={this.toggle}>
+      <div ref="modal" className={ this.className } onClick={closeOnOutclick ? this.toggle : null}>
         { children }
       </div>
     );
   }
 }
+
+export default Modal

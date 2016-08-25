@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
 import Modal from '../Modal'
+import Preloader from '../elements/Preloader'
+import Dropdown from '../Dropdown'
+import DropdownButton from '../Dropdown/DropdownButton'
+import DropdownMenu from '../Dropdown/DropdownMenu'
 
 export default class App extends Component {
   render() {
@@ -17,8 +21,8 @@ export default class App extends Component {
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error veniam, incidunt veritatis quia eaque nostrum dolor adipisci illo quibusdam placeat alias cupiditate debitis sint aut aperiam, expedita consequatur quasi deserunt.</p>
             </div>
             <div className="modal-footer">
-              <button className="btn small btn-outline-default">Cancel</button>
-              <button className="btn small btn-primary right">Publish</button>
+              <button className="btn small btn-outline-default" onClick={() => this.refs.modal.toggle()}>Cancel</button>
+              <button className="btn small btn-primary right"><Preloader medium light/></button>
             </div>
           </div>
         </Modal>
@@ -29,9 +33,15 @@ export default class App extends Component {
               <ul className="nav navbar-nav">
                 <li><a className="nav-link active" href="">Features</a></li>
                 <li><a className="nav-link" href="">Pricing</a></li>
-                <li className="dropdown">
-                  <a className="nav-link" href="">More <i className="fa fa-angle-down"></i></a>
-                  <div className="dropdown-menu">
+                <Dropdown component="li">
+                  <DropdownButton
+                    component="a"
+                    className="nav-link dropdown-button"
+                    href=""
+                  >
+                    More <i className="fa fa-angle-down" />
+                  </DropdownButton>
+                  <DropdownMenu>
                     <a href="" className="dropdown-link">Create Page</a>
                     <a href="" className="dropdown-link">Manage Pages</a>
                     <div className="dropdown-separator" />
@@ -44,12 +54,18 @@ export default class App extends Component {
                     <a href="" className="dropdown-link">Blog</a>
                     <a href="" className="dropdown-link">About</a>
                     <a href="" className="dropdown-link">Jobs</a>
-                  </div>
-                </li>
+                  </DropdownMenu>
+                </Dropdown>
               </ul>
               <ul className="nav navbar-nav right">
-                <li className="dropdown">
-                  <a className="nav-link" href="#">Notifications <i className="fa fa-angle-down"></i></a>
+                <Dropdown component="li">
+                  <DropdownButton
+                    component="a"
+                    className="nav-link dropdown-button"
+                    href=""
+                  >
+                    Notifications <i className="fa fa-angle-down" />
+                  </DropdownButton>
                   <div className="dropdown-menu notifications">
                     <div className="dropdown-item medium">
                       <span className="text-muted text-semibold">Notifications</span>
@@ -72,7 +88,7 @@ export default class App extends Component {
                       <a href="" className="muted-link right">Your stats</a>
                     </div>
                   </div>
-                </li>
+                </Dropdown>
                 <li><a className="nav-link" href="">Documentation</a></li>
                 <li><a className="nav-link" href="">Support</a></li>
               </ul>
@@ -85,6 +101,9 @@ export default class App extends Component {
                 onClick={() => this.refs.modal.toggle() }
                 >
                 Open modal
+              </button>
+              <button className="btn btn-circle margin-left-md btn-primary">
+                <i className="fa fa-pencil" />
               </button>
             </div>
           </div>

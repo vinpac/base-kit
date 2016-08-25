@@ -1,0 +1,69 @@
+$preloader-size: 16px;
+
+@mixin preloader-size($size: $preloader-size) {
+  width: $size * 4;
+  height: $size;
+
+  .preloader-item {
+    width: $size;
+    height: $size;
+    margin-left: $size / 2;
+  }
+}
+
+.preloader {
+  line-height: 100%;
+  display: inline-block;
+
+  &.light .preloader-item {
+    background-color: rgba(#FFF, .2);
+    animation-name: bounce-preloader-light;
+  }
+}
+
+.preloader-item{
+  display: inline-block;
+  background-color: rgba(#000,.2);
+  animation: .75s bounce-preloader linear infinite normal;
+  border-radius: 20px;
+}
+
+.preloader {
+  @include preloader-size();
+}
+
+.preloader.medium {
+  @include preloader-size(12px);
+}
+
+@for $i from 1 through 3 {
+  .preloader-item-#{$i} {
+    @if $i == 1 {
+      margin-left: 0 !important;
+    }
+
+    animation-delay: ($i - 1) * .15s;
+  }
+}
+
+
+@keyframes bounce-preloader{
+  0%{}
+
+  50%{
+    background-color:rgba(#000,.5);
+  }
+
+  100%{}
+}
+
+@keyframes bounce-preloader-light{
+  0%{}
+
+  50%{
+    background-color: #FFF;
+  }
+
+  100%{}
+}
+

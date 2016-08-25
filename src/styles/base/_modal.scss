@@ -9,17 +9,25 @@
   bottom: 0;
   top: 0;
   z-index: 500;
-  transition: background .2s;
+  transition: background .2s, opacity .1s;
   height: 0;
   width: 0;
   overflow: hidden;
 
-  &.open {
+  &.open,
+  &.closed {
     width: auto;
     height: auto;
     overflow-y: auto;
-    display: block;
     padding: 60px 0;
+  }
+
+  &.closed {
+    opacity: 0;
+    overflow: hidden;
+  }
+
+  &.open {
     background: $modal-backdrop-bg;
   }
 

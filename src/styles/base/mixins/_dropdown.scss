@@ -1,7 +1,7 @@
 @mixin make-dropdown($color: #FFF) {
   position: relative;
 
-  &.active .dropdown-menu {
+  &.open .dropdown-menu {
     display: block;
   }
 

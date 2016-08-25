@@ -59,6 +59,8 @@ $btn-line-height: 1.25 !default;
 $btn-border-radius: 3px !default;
 $btn-font-weight: 600 !default;
 
+$btn-circle-size: 2.375rem;
+
 $btn-default-color: #9DA6AF;
 $btn-success-color: #60BB4D;
 
@@ -88,7 +90,7 @@ $link-hover-color: $link-color !default;
 $link-hover-decoration: underline !default;
 
 // Utilities
-$util-margin-horizontal: 1rem !default;
+$util-margin-horizontal: 1.25rem !default;
 $util-margin-vertical: 2rem !default;
 
 $text-pre-muted-color: #666 !default;
