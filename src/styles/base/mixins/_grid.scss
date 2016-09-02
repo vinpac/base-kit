@@ -27,6 +27,19 @@
   }
 }
 
+@mixin make-col-offset($size, $columns: $grid-columns) {
+  margin-left: percentage($size / $columns);
+}
+
+@mixin make-col-push($size, $columns: $grid-columns) {
+  left: if($size > 0, percentage($size / $columns), auto);
+}
+
+@mixin make-col-pull($size, $columns: $grid-columns) {
+  right: if($size > 0, percentage($size / $columns), auto);
+}
+
+
 @mixin make-col($size, $columns: $grid-columns, $gutter: $grid-gutter-width) {
   @if $enable-flex {
     flex: 0 0 percentage($size / $columns);
@@ -37,55 +50,13 @@
   }
 }
 
-@mixin make-grid-columns($columns: $grid-columns, $gutter: $grid-gutter-width) {
-  %grid-column {
-    padding-left: ($gutter / 2);
-    padding-right: ($gutter / 2);
-    float: left;
-    position: relative;
-    min-height: 1px;
-
-    @if $enable-flex {
-      width: 100%;
-    }
-  }
-
-  %grid-flex-column {
-    position: relative;
-    flex-basis: 0;
-    flex-grow: 1;
-    max-width: 100%;
-    min-height: 1px;
-    padding-right: ($grid-gutter-width / 2);
-    padding-left:  ($grid-gutter-width / 2);
-  }
-
-  .col-md {
-    @extend %grid-flex-column;
-  }
-
-
-  @for $i from 1 through $columns {
-    .col-#{$i} {
-      @extend %grid-column;
-      @include make-col($i, $columns, $grid-gutter-width);
-    }
-  }
-
-  @media (max-width: 768px) {
-    @for $i from 1 through $columns {
-      .col-#{$i} {
-        width: 100%;
-        float: none;
-      }
-    }
-  }
-
-  @for $i from 1 through $columns {
-    .col-offset-#{$i} {
-      @media (min-width: 768px) {
-        margin-left: percentage($i / $columns);
-      }
-    }
+@mixin make-col-modifier($type, $size, $columns) {
+  // Work around the lack of dynamic mixin @include support (https://github.com/sass/sass/issues/626)
+  @if $type == push {
+    @include make-col-push($size, $columns);
+  } @else if $type == pull {
+    @include make-col-pull($size, $columns);
+  } @else if $type == offset {
+    @include make-col-offset($size, $columns);
   }
 }

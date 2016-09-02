@@ -65,11 +65,12 @@ class Modal extends React.Component {
   }
 
   get className() {
-    const { className } = this.props
+    const { className, large } = this.props
     const { isOpen, inTransition } = this.state
     return cx(
       'modal',
       {
+        'large': large,
         'open': isOpen,
         'closed': !isOpen && inTransition
       },

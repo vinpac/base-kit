@@ -45,7 +45,7 @@ $font-size-h6: 1rem !default;
 
 $headings-margin-bottom: .5rem !default;
 $headings-line-height: 1.15 !default;
-$headings-font-weight: 500 !default;
+$headings-font-weight: bold !default;
 $headings-color: inherit !default;
 
 // Grid
@@ -79,9 +79,14 @@ $dropdown-item-padding-y: .38rem;
 $dropdown-border-radius: 4px;
 
 // Modal
-$modal-backdrop-bg: rgba(#567, .8) !default;
+$modal-bg: rgba(#000, .6) !default;
 $modal-padding-x: 1.25rem !default;
 $modal-padding-y: 1rem !default;
+$modal-sizes: (
+  small: 468px,
+  default: 552px,
+  large: 868px
+) !default;
 
 // link
 $link-color: #007ee5 !default;

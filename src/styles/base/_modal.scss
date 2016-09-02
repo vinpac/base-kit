@@ -19,7 +19,7 @@
     width: auto;
     height: auto;
     overflow-y: auto;
-    padding: 60px 0;
+    padding: 60px ($grid-gutter-width / 2);
   }
 
   &.closed {
@@ -28,13 +28,13 @@
   }
 
   &.open {
-    background: $modal-backdrop-bg;
+    background: $modal-bg;
   }
 
   .modal-content {
     background: #fff;
     border-radius: 3px;
-    width: 540px;
+    max-width: 540px;
     min-height: 100px;
     margin: 0 auto;
   }
@@ -47,6 +47,21 @@
   .modal-body {
     padding-left: $modal-padding-x;
     padding-right: $modal-padding-x;
+  }
+
+  .modal-content {
+    max-width: map-get($modal-sizes, default)
+  }
+
+  @each $classname in map-keys($modal-sizes) {
+    &.#{$classname} {
+      $size: map-get($modal-sizes, $classname);
+      @if $size != 0 && $classname != default {
+        .modal-content {
+          max-width: $size;
+        }
+      }
+    }
   }
 
 }

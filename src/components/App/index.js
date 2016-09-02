@@ -94,7 +94,8 @@ export default class App extends Component {
               </ul>
             </header>
             <div className="container-md text-center">
-              <h2 className="margin-top-lg text-light">About Stripe</h2>
+
+              <h2 className="margin-top-lg text-light">Just Random Text</h2>
               <p className="text-md text-muted">Stripe is the best way to accept payments online and in mobile apps. We handle billions of dollars every year for forward-thinking businesses around the world.</p>
               <button
                 className="btn btn-lg btn-primary"
@@ -110,7 +111,7 @@ export default class App extends Component {
         </header>
         <div className="container section-padding">
           <div className="row">
-            <div className="col-6">
+            <div className="col-lg-6">
               <article className="article">
                 <div className="img-cover" />
                 <div className="article-content">
@@ -119,7 +120,7 @@ export default class App extends Component {
                 </div>
               </article>
             </div>
-            <div className="col-6">
+            <div className="col-lg-6">
               <div className="article-text-content">
                 <p className="text-lg text-pre-muted">The best platforms own their user experience from end to end, including payments. Purchasing is woven into Twitter and Shopify. Kickstarter and Squarespace get their sellers paid seamlessly. These services work just right.</p>
                 <p className="text-muted">It only takes a few minutes to start adding commerce to your platform. To manage payments, you can set up Stripe accounts for sellers from 25 countries (more coming soon). Or own the look and feel yourself and have sellers do everything within your platform.</p>
@@ -136,20 +137,20 @@ export default class App extends Component {
         <div className="bg-blue section-padding">
           <div className="container">
             <div className="row around-xs margin-bottom">
-              <div className="col-8">
+              <div className="col-lg-8">
                 <p className="text-lg text-pre-muted">The on-demand economy gives the people what they want, now: rides, food, accommodation, and more. Your payments should meet the same high standards as your product experience: with just a tap, Stripe helps sellers on your marketplace get paid.</p>
               </div>
             </div>
             <div className="row">
-              <div className="col-12">
+              <div className="col-lg-12">
                 <article className="article-2 margin-top margin-bottom-lg"></article>
               </div>
             </div>
             <div className="row around-xs">
-              <div className="col-5">
+              <div className="col-lg-5">
                 <p className="text-muted">Payments for <span>market­places</span> used to be hard: accounting for seller earnings, making en-masse payouts happen (on time!), managing 1099-Ks and tax reporting, regulatory compliance. Marketplaces shouldn’t have to build all that from scratch, so we made Stripe Connect to provide all the tools you need to run a multi-sided marketplace.</p>
               </div>
-              <div className="col-5">
+              <div className="col-lg-5">
                 <p className="text-muted">Integrating Connect means always having access to the state-of-the-art. In October 2015, we started piloting <a href="">instant debit card transfers</a>. And Connect is now available to marketplaces in <a href="">25 countries</a>.</p>
                 <hr className="hr-muted hr-lg"/>
                 <ul className="nav nav-vertical">
