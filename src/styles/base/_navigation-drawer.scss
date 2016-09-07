@@ -1,0 +1,156 @@
+.nav-drawer-btn {
+  display: none;
+}
+
+@include media-breakpoint-down(sm, $grid-breakpoints) {
+  .nav-drawer-menu {
+    position: fixed;
+    width: 300px;
+    top: 0;
+    bottom: 0;
+    left: -310px;
+    transition: left .3s, right .3s;
+    background: #fff;
+    box-shadow: 0 0 2px rgba(0,0,0,.3);
+    z-index: 999;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    .navbar-nav {
+      display: block;
+      width: 100%;
+
+      &.collapse {
+         > li,
+        .navbar-item {
+          float: none;
+          display: block;
+          margin: 0;
+          border-bottom: 1px solid #eee;
+        }
+
+        .nav-link {
+          padding: 1.1rem 1.25rem;
+        }
+      }
+    }
+
+
+
+    .navbar-right.collapse {
+      float: none;
+    }
+
+    .dropdown .dropdown-menu {
+      position: relative;
+      left: auto;
+      right: auto;
+      top: auto;
+      bottom: auto;
+      border-radius: 0;
+      box-shadow: none;
+      background: rgba(0,0,0,.03);
+      border-top: 1px solid #eee;
+
+      &:after,
+      &:before {
+        display: none;
+      }
+
+      .dropdown-link {
+        padding: .8rem 1.25rem .8rem 2rem;
+      }
+    }
+  }
+
+  .nav-drawer-header {
+    border-bottom: 1px solid #eee;
+    padding: .5rem .25rem;
+  }
+
+  .nav-drawer-btn {
+    border: 0;
+    border-radius: 0;
+    background: none;
+    color: #fff;
+    font-size: 1.25em;
+  }
+
+  .nav-drawer-light .nav-drawer-menu {
+    background: #333;
+    color: #FFF;
+
+    .nav-drawer-header {
+      border-bottom-color: rgba(255,255,255,.1)
+    }
+
+    .nav-link,
+    .navbar-nav .nav-link,
+    .dropdown-link {
+      color: rgba(#FFF, .6);
+
+      &:hover,
+      &.active {
+        color: #FFF;
+      }
+    }
+
+    .navbar-nav > li,
+    .nav-item {
+      border-color: rgba(#FFF, .05);
+    }
+
+    .dropdown-menu {
+      background: rgba(0,0,0,.2);
+      border-color: rgba(255,255,255,.1);
+    }
+
+    .dropdown-separator:before {
+      background: rgba(255,255,255,.07);
+    }
+  }
+
+  .nav-drawer-backdrop {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    z-index: 998;
+    transition: background .2s;
+  }
+
+  .nav-drawer {
+    &.open {
+      .nav-drawer-menu {
+        left: 0;
+      }
+
+      .nav-drawer-backdrop {
+        background: rgba(0,0,0,.5);
+      }
+    }
+
+    &.open,
+    &.hiding {
+      .nav-drawer-backdrop {
+        width: auto;
+        height: auto;
+      }
+    }
+  }
+
+  .nav-drawer-right {
+    .nav-drawer-menu {
+      left: auto;
+      right: -310px;
+    }
+
+    &.open .nav-drawer-menu {
+      left: auto !important;
+      right: 0;
+    }
+  }
+}

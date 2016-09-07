@@ -9,6 +9,8 @@ $color-primary: #007ee5 !default;
 $color-primary-dark: #026DC5 !default;
 $color-accent: #E91E63 !default;
 
+$color-warn: #D32F2F !default;
+
 // Variables
 $grid-breakpoints: (
   xs: 0,
@@ -29,7 +31,7 @@ $container-max-widths: (
 // Font
 $font-family-base: Arial, Helvetica, sans-serif !default;
 $line-height-base: 1.5 !default;
-$line-height-paragraph: 1.7 !default;
+$line-height-paragraph: $line-height-base !default;
 $font-size-root: 16px !default;
 $font-size-base: 16px !default;
 $text-color: #333 !default;
@@ -61,17 +63,18 @@ $btn-font-weight: 600 !default;
 
 $btn-circle-size: 2.375rem;
 
-$btn-default-color: #9DA6AF;
-$btn-success-color: #60BB4D;
+$btn-default-bg: #9DA6AF !default;
+$btn-success-bg: #60BB4D !default;
+
+
 
 // Forms
-$input-padding-x: .75rem !default;
-$input-padding-y: .625rem !default;
+$input-padding-x: .65rem !default;
+$input-padding-y: .5rem !default;
 $input-line-height: 1.2 !default;
-
-$input-lg-font-size: 20px !default;
-$input-lg-padding-y: .67rem !default;
-$input-lg-padding-x: .8rem !default;
+$input-bg: #FFF !default;
+$input-color: $text-color !default;
+$input-color-placeholder: rgba(#000,.35) !default;
 
 // Dropdown
 $dropdown-item-padding-x: 1.4rem;
@@ -88,6 +91,13 @@ $modal-sizes: (
   large: 868px
 ) !default;
 
+// Panel
+$panel-bg: #FFF;
+$panel-header-bg: #FBFCFD;
+$panel-border-color: #E3E8F6;
+$panel-border-width: 2px;
+$panel-border-radius: 6px;
+
 // link
 $link-color: #007ee5 !default;
 $link-decoration: none !default;
@@ -100,8 +110,7 @@ $util-margin-vertical: 2rem !default;
 
 $text-pre-muted-color: #666 !default;
 $text-muted-color: #999 !default;
+$text-semibold-weight: 500;
 
 $hr-color: rgba(0,0,0,.1);
 $hr-muted-color: rgba(0,0,0,.05);
-
-$text-semibold-weight: 600;

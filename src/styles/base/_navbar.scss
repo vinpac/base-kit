@@ -1,7 +1,7 @@
 .navbar {
   @include clearfix();
   position: relative;
-  padding: .5rem 1rem;
+  padding: .5rem 0;
 }
 
 .navbar-brand {
@@ -75,6 +75,10 @@
   @include make-navbar(null, $text-color);
 }
 
-.navbar-btn {
+.nav-button {
   padding: .5rem 1rem;
+}
+
+.navbar-right {
+  float: right;
 }

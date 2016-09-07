@@ -14,6 +14,10 @@
   font-weight: 300;
 }
 
+.text-semibold {
+  font-weight: $text-semibold-weight;
+}
+
 .text-center {
   text-align: center;
 }
@@ -32,6 +36,6 @@
   font-size: .875em;
 }
 
-.text-semibold {
-  font-weight: $text-semibold-weight;
+.text-upper {
+  text-transform: uppercase;
 }

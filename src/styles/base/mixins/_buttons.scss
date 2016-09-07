@@ -1,4 +1,4 @@
-@mixin button-variant($color, $text-color: #FFF) {
+@mixin button-variant($color, $text-color: #FFF, $text-active-color: $text-color) {
   background: $color;
   color: $text-color;
   border-color: $color;
@@ -9,9 +9,14 @@
     background: lighten($color, 4%);
   }
 
+  &:hover,
+  &:focus {
+    color: $text-active-color;
+  }
 
   &:active,
   &.active {
+    color: $text-active-color;
     border-color: lighten($color, 8%);
     background: lighten($color, 8%);
   }

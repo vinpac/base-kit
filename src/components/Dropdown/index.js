@@ -35,7 +35,7 @@ export default class Dropdown extends React.Component {
   handleDocumentClick(e) {
     if (e && e.target) {
       try{
-        const node = ReactDOM.findDOMNode(this.refs.dropdown)
+        const node = ReactDOM.findDOMNode(this)
         if (!node.contains(e.target)) {
           this.hide()
         }
@@ -80,7 +80,6 @@ export default class Dropdown extends React.Component {
     const { children } = this.props
     return (
       <this.props.component
-        ref="dropdown"
         className={ this.className }
       >
         {

@@ -6,3 +6,11 @@
   left: 0;
   margin: auto;
 }
+
+.absolute-center {
+  @include absolute-center();
+}
+
+.pull-right {
+  float: right;
+}

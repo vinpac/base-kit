@@ -1,12 +1,24 @@
 .input {
   border-radius: 4px;
   border: 1px solid #ccc;
-  margin-bottom: 10px;
   width: 100%;
   line-height: $input-line-height;
   padding: $input-padding-y $input-padding-x;
   outline: none;
+  color: $input-color;
+  background: $input-bg;
   transition: border-color .2s, box-shadow .2s;
+
+  &::-ms-expand {
+    background-color: transparent;
+    border: 0;
+  }
+
+  &::placeholder {
+    color: $input-color-placeholder;
+    // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
+    opacity: 1;
+  }
 
   &:hover,
   &:focus,
@@ -20,12 +32,39 @@
   }
 }
 
+.form-group-lg .input,
 .input-lg {
-  font-size: $input-lg-font-size;
-  padding: $input-lg-padding-y $input-lg-padding-x;
+  font-size: 1.25em;
+  padding: 0.782rem 0.85rem;
 }
 
 label {
   font-size: $font-size-base;
   margin-bottom: .6rem;
+}
+
+
+.input-subtext {
+  color: $text-muted-color;
+  font-size: 0.88em;
+  margin-top: .8rem;
+  display: block;
+}
+
+.form-group-warn .input,
+.input.input-warn {
+  border-color: #D32F2F;
+}
+
+.form-group-warn .input-subtext {
+  color: $color-warn;
+}
+
+.form-group {
+
+  margin-bottom: 10px;
+}
+
+.form-group {
+  margin-bottom: 0.75rem;
 }

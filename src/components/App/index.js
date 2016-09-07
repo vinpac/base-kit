@@ -4,6 +4,9 @@ import Preloader from '../elements/Preloader'
 import Dropdown from '../Dropdown'
 import DropdownButton from '../Dropdown/DropdownButton'
 import DropdownMenu from '../Dropdown/DropdownMenu'
+import NavigationDrawer from '../NavigationDrawer'
+import NavigationDrawerMenu from '../NavigationDrawer/NavigationDrawerMenu'
+import NavigationDrawerButton from '../NavigationDrawer/NavigationDrawerButton'
 
 export default class App extends Component {
   render() {
@@ -29,86 +32,176 @@ export default class App extends Component {
         <header className="header">
           <div className="container">
             <header className="navbar-default navbar">
-              <a href="" className="navbar-brand">Starter kit</a>
-              <ul className="nav navbar-nav">
-                <li><a className="nav-link active" href="">Features</a></li>
-                <li><a className="nav-link" href="">Pricing</a></li>
-                <Dropdown component="li">
-                  <DropdownButton
-                    component="a"
-                    className="nav-link dropdown-button"
-                    href=""
-                  >
-                    More <i className="fa fa-angle-down" />
-                  </DropdownButton>
-                  <DropdownMenu>
-                    <a href="" className="dropdown-link">Create Page</a>
-                    <a href="" className="dropdown-link">Manage Pages</a>
-                    <div className="dropdown-separator" />
-                    <a href="" className="dropdown-link">Create Group</a>
-                    <a href="" className="dropdown-link">New groups</a>
-                    <div className="dropdown-separator" />
-                    <a href="" className="dropdown-link">Create ads</a>
-                    <a href="" className="dropdown-link">Advertising on Starter Kit</a>
-                    <div className="dropdown-separator" />
-                    <a href="" className="dropdown-link">Blog</a>
-                    <a href="" className="dropdown-link">About</a>
-                    <a href="" className="dropdown-link">Jobs</a>
-                  </DropdownMenu>
-                </Dropdown>
-              </ul>
-              <ul className="nav navbar-nav right">
-                <Dropdown component="li">
-                  <DropdownButton
-                    component="a"
-                    className="nav-link dropdown-button"
-                    href=""
-                  >
-                    Notifications <i className="fa fa-angle-down" />
-                  </DropdownButton>
-                  <div className="dropdown-menu notifications">
-                    <div className="dropdown-item medium">
-                      <span className="text-muted text-semibold">Notifications</span>
-                    </div>
-                    <a href="" className="dropdown-item notification medium">
-                      <img src="https://66.media.tumblr.com/avatar_028a20ac89e4_64.png" className="img-circle" alt=""/>
-                      <p><b className="text-semibold">John Doe</b> started following you</p>
-                      <span className="text-muted">10 min ago</span>
-                    </a>
-                    <a href="" className="dropdown-item notification medium">
-                      <img src="https://67.media.tumblr.com/avatar_ea9f86b1c4e4_64.png" className="img-circle" alt=""/>
-                      <p><b className="text-semibold">Art Snack Blog</b> started following you</p>
-                      <span className="text-muted">10 min ago</span>
-                    </a>
-                    <div className="dropdown-item large">
-                      <p className="no-margin">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita reprehenderit quam in, eaque earum cupiditate quos autem voluptas facere nam laudantium tempora saepe commodi esse dolorum, ad nihil, repellat iusto.</p>
-                    </div>
-                    <div className="dropdown-item medium">
-                      <a href="" className="muted-link">Older Notifications</a>
-                      <a href="" className="muted-link right">Your stats</a>
-                    </div>
-                  </div>
-                </Dropdown>
-                <li><a className="nav-link" href="">Documentation</a></li>
-                <li><a className="nav-link" href="">Support</a></li>
-              </ul>
+              <NavigationDrawer right ref="a" open>
+                <a href="" className="navbar-brand">Starter kit</a>
+                <ul className="nav navbar-nav navbar-right hidden-md-up">
+                  <Dropdown component="li">
+                      <DropdownButton
+                        component="a"
+                        className="nav-link dropdown-button"
+                        href=""
+                      >
+                        Notifications <i className="fa fa-angle-down" />
+                      </DropdownButton>
+                      <div className="dropdown-menu notifications">
+                        <div className="dropdown-item medium">
+                          <span className="text-muted text-semibold">Notifications</span>
+                        </div>
+                        <a href="" className="dropdown-item notification medium">
+                          <img src="https://66.media.tumblr.com/avatar_028a20ac89e4_64.png" className="img-circle" alt=""/>
+                          <p><b className="text-semibold">John Doe</b> started following you</p>
+                          <span className="text-muted">10 min ago</span>
+                        </a>
+                        <a href="" className="dropdown-item notification medium">
+                          <img src="https://67.media.tumblr.com/avatar_ea9f86b1c4e4_64.png" className="img-circle" alt=""/>
+                          <p><b className="text-semibold">Art Snack Blog</b> started following you</p>
+                          <span className="text-muted">10 min ago</span>
+                        </a>
+                        <div className="dropdown-item large">
+                          <p className="no-margin">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita reprehenderit quam in, eaque earum cupiditate quos autem voluptas facere nam laudantium tempora saepe commodi esse dolorum, ad nihil, repellat iusto.</p>
+                        </div>
+                        <div className="dropdown-item medium">
+                          <a href="" className="link-muted">Older Notifications</a>
+                          <a href="" className="link-muted right">Your stats</a>
+                        </div>
+                      </div>
+                    </Dropdown>
+                  <li>
+                    <NavigationDrawerButton getDrawer={() => this.refs.a}>
+                      <i className="fa fa-bars" />
+                    </NavigationDrawerButton>
+                  </li>
+                </ul>
+                <NavigationDrawerMenu>
+                  <ul className="nav navbar-nav collapse">
+                    <li><a className="nav-link active" href="">Features</a></li>
+                    <li><a className="nav-link" href="">Pricing</a></li>
+                    <Dropdown component="li">
+                      <DropdownButton
+                        component="a"
+                        className="nav-link dropdown-button"
+                        href=""
+                      >
+                        More <i className="fa fa-angle-down" />
+                      </DropdownButton>
+                      <DropdownMenu>
+                        <a href="" className="dropdown-link">Create Page</a>
+                        <a href="" className="dropdown-link">Manage Pages</a>
+                        <div className="dropdown-separator" />
+                        <a href="" className="dropdown-link">Create Group</a>
+                        <a href="" className="dropdown-link">New groups</a>
+                        <div className="dropdown-separator" />
+                        <a href="" className="dropdown-link">Create ads</a>
+                        <a href="" className="dropdown-link">Advertising on Starter Kit</a>
+                        <div className="dropdown-separator" />
+                        <a href="" className="dropdown-link">Blog</a>
+                        <a href="" className="dropdown-link">About</a>
+                        <a href="" className="dropdown-link">Jobs</a>
+                      </DropdownMenu>
+                    </Dropdown>
+                  </ul>
+                  <ul className="nav navbar-nav navbar-right collapse">
+                    <li><a className="nav-link" href="">Documentation</a></li>
+                    <li><a className="nav-link" href="">Support</a></li>
+                  </ul>
+                </NavigationDrawerMenu>
+              </NavigationDrawer>
             </header>
             <div className="container-md text-center">
 
               <h2 className="margin-top-lg text-light">Just Random Text</h2>
               <p className="text-md text-muted">Stripe is the best way to accept payments online and in mobile apps. We handle billions of dollars every year for forward-thinking businesses around the world.</p>
-              <button
-                className="btn btn-lg btn-primary"
-                onClick={() => this.refs.modal.toggle() }
-                >
-                Open modal
-              </button>
-              <button className="btn btn-circle margin-left-md btn-primary">
-                <i className="fa fa-pencil" />
-              </button>
+              <div className="row">
+                <div className="col-md-4">
+                  <select name="" id="" className="input input-lg">
+                    <option value="">Chose</option>
+                    <option value="">aa</option>
+                  </select>
+                </div>
+                <div className="col-md-4">
+                  <input type="text" className="input input-lg" placeholder="you@domain.com"/>
+                </div>
+                <div className="col-md-4">
+                  <button
+                    className="btn btn-lg btn-primary"
+                    onClick={() => this.refs.modal.toggle() }
+                    >
+                    Open modal
+                  </button>
+                  <button className="btn btn-circle margin-left-md btn-primary">
+                    <i className="fa fa-pencil" />
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </header>
+        <div className="container section-padding">
+          <h1 className="text-light margin-bottom-lg">Forms</h1>
+          <div className="row">
+            <div className="col-md-4">
+              <h4 className="text-light text-muted margin-bottom-md">Normal input</h4>
+              <input type="text" className="input" placeholder=".input"/>
+            </div>
+            <div className="col-md-4">
+              <h4 className="text-light text-muted margin-bottom-md">Warn</h4>
+              <div className="form-group form-group-warn">
+                <div className="input-group">
+                  <input type="text" className="input" placeholder="Search for..." />
+                  <span className="input-group-btn">
+                    <button className="btn btn-outline-primary" type="button">Continue</button>
+                  </span>
+                </div>
+                <span className="input-subtext">Email invalido</span>
+              </div>
+            </div>
+          </div>
+          <h1 className="text-light margin-top-lg margin-bottom-lg">Panels</h1>
+          <div className="row">
+            <div className="col-md-8">
+              <div className="panel">
+                <div className="panel-header">
+                  <span className="text-upper text-semibold text-muted">Table of contents</span>
+                </div>
+                <div className="list">
+                  <div className="list-item">
+                    <div className="row">
+                      <div className="col-xs-2">Content</div>
+                      <div className="col-xs-10">
+                        <ul className="nav nav-vertical">
+                          <li><a href="#What-is-Stripe-Atlas">What is Stripe Atlas?</a></li>
+                          <li><a href="#Who-should-use-Atlas">Who should use Atlas?</a></li>
+                          <li><a href="#How-do-I-get-access">How do I get access?</a></li>
+                          <li><a href="#Who-is-in-the-Stripe-Atlas-network">Who is in the Stripe Atlas network?</a></li>
+                          <li><a href="#Can-I-use-Stripe-Atlas-if-I-m-based-in-a-country-Stripe-already-supports">Can I use Stripe Atlas if I’m based in a country Stripe already supports?</a></li>
+                          <li><a href="#Can-I-use-Stripe-Atlas-if-I-m-based-in-Cuba">Can I use Stripe Atlas if I’m based in Cuba?</a></li>
+                          <li><a href="#What-does-Atlas-cost">What does Atlas cost?</a></li>
+                          <li><a href="#Are-there-any-additional-costs-I-should-be-aware-of">Are there any additional costs I should be aware of?</a></li>
+                          <li><a href="#What-resources-will-I-receive-from-Amazon-Web-Services">What resources will I receive from Amazon Web Services?</a></li>
+                          <li><a href="#Who-advises-Stripe-Atlas">Who advises Stripe Atlas?</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <a href="" className="list-item list-item-action">
+                    Teste <i className="fa fa-angle-right pull-right"></i>
+                  </a>
+                  <div className="list-item"></div>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="panel panel-success">
+                <div className="panel-header">
+                  <span className="text-upper">Yeah</span>
+                </div>
+                <div className="panel-body">
+                  <p className="no-margin">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate repellendus cum provident ipsa vitae ipsam placeat quia sint, quo quibusdam illum dolores facere nobis hic optio officiis pariatur porro cumque?</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div className="container section-padding">
           <div className="row">
             <div className="col-lg-6">

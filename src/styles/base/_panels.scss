@@ -1,0 +1,46 @@
+.panel {
+  border-radius: $panel-border-radius;
+  width: 100%;
+  @include panel-variant();
+}
+
+.panel-success {
+  @include panel-variant(null, $btn-success-bg );
+
+  .panel-header {
+    @include panel-header-variant(#FFF, $btn-success-bg);
+    color: $btn-success-bg;
+  }
+}
+
+.panel-header {
+  border-bottom: $panel-border-width solid $panel-border-color;
+  min-height: 30px;
+  padding: 1rem 1.2rem;
+  background: $panel-header-bg;
+  border-radius: $panel-border-radius $panel-border-radius 0 0;
+}
+
+.panel-body {
+  padding: 1rem 1.2rem;
+  position: relative;
+}
+
+
+.panel .list {
+  border-radius: 0;
+  border-width: 0;
+
+  .list-item {
+    border-top: $panel-border-width solid $panel-border-color;
+    padding: 1rem 1.2rem;
+
+    &:first-child {
+      border-top-width: 0;
+    }
+  }
+
+  .list-item-action:hover {
+    background: $panel-header-bg;
+  }
+}
