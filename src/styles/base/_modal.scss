@@ -34,9 +34,8 @@
   .modal-content {
     background: #fff;
     border-radius: 3px;
-    max-width: 540px;
-    min-height: 100px;
     margin: 0 auto;
+    position: relative;
   }
 
   .modal-footer,
@@ -54,7 +53,7 @@
   }
 
   @each $classname in map-keys($modal-sizes) {
-    &.#{$classname} {
+    &.modal-#{$classname} {
       $size: map-get($modal-sizes, $classname);
       @if $size != 0 && $classname != default {
         .modal-content {

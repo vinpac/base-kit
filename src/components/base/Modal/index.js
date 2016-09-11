@@ -1,8 +1,8 @@
 import React from 'react'
 import cx from 'classnames'
 import ReactDOM from 'react-dom'
-import { classNamesToObject } from '../../utils/text-utils'
-import { getScrollbarSize } from '../../utils/dom-utils'
+import { classNamesToObject } from '../../../utils/text-utils'
+import { getScrollbarSize } from '../../../utils/dom-utils'
 
 class Modal extends React.Component {
 
@@ -65,12 +65,13 @@ class Modal extends React.Component {
   }
 
   get className() {
-    const { className, large } = this.props
+    const { className, large, small } = this.props
     const { isOpen, inTransition } = this.state
     return cx(
       'modal',
       {
-        'large': large,
+        'modal-lg': large,
+        'modal-sm': small,
         'open': isOpen,
         'closed': !isOpen && inTransition
       },

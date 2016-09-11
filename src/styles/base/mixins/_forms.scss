@@ -1,0 +1,10 @@
+@mixin form-group-state($color) {
+  .input {
+    border-color: $color;
+  }
+
+  .input-subtext,
+  label {
+    color: $color;
+  }
+}

@@ -58,8 +58,8 @@ $grid-gutter-width: 30px !default;
 $btn-padding-y: .5rem !default;
 $btn-padding-x: 1rem !default;
 $btn-line-height: 1.25 !default;
-$btn-border-radius: 3px !default;
 $btn-font-weight: 600 !default;
+$btn-border-radius: 3px !default;
 
 $btn-circle-size: 2.375rem;
 
@@ -73,8 +73,10 @@ $input-padding-x: .65rem !default;
 $input-padding-y: .5rem !default;
 $input-line-height: 1.2 !default;
 $input-bg: #FFF !default;
+$input-border-color: #ccc !default;
 $input-color: $text-color !default;
 $input-color-placeholder: rgba(#000,.35) !default;
+$input-border-radius: 4px !default;
 
 // Dropdown
 $dropdown-item-padding-x: 1.4rem;
@@ -86,9 +88,9 @@ $modal-bg: rgba(#000, .6) !default;
 $modal-padding-x: 1.25rem !default;
 $modal-padding-y: 1rem !default;
 $modal-sizes: (
-  small: 468px,
   default: 552px,
-  large: 868px
+  sm: 468px,
+  lg: 868px
 ) !default;
 
 // Panel

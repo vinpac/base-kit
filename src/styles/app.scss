@@ -92,3 +92,20 @@
   }
 }
 
+.slide-previous,
+.slide-next {
+  > .fa {
+    font-size: 48px;
+  }
+}
+
+.slide-item {
+  background: #333;
+  width: 150px;
+  height: 150px;
+  margin-right: 10px;
+  color: #FFF;
+  font-size: 48px;
+  padding: 45px;
+  text-align: center;
+}

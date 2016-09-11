@@ -1,6 +1,6 @@
 .input {
-  border-radius: 4px;
-  border: 1px solid #ccc;
+  border-radius: $input-border-radius;
+  border: 1px solid $input-border-color;
   width: 100%;
   line-height: $input-line-height;
   padding: $input-padding-y $input-padding-x;
@@ -51,13 +51,8 @@ label {
   display: block;
 }
 
-.form-group-warn .input,
-.input.input-warn {
-  border-color: #D32F2F;
-}
-
-.form-group-warn .input-subtext {
-  color: $color-warn;
+.form-group-warn {
+  @include form-group-state($color-warn);
 }
 
 .form-group {

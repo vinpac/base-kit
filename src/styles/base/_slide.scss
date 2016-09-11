@@ -1,0 +1,36 @@
+.slide {
+  position: relative;
+  min-height: 100px;
+  padding: 0 100px;
+
+  .slide-previous,
+  .slide-next {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    outline: none;
+    background: 0;
+    border: 0;
+    padding: 0 2rem;
+    width: 100px;
+  }
+
+  .slide-previous {
+    left: 0;
+  }
+
+  .slide-next {
+    right: 0;
+  }
+
+  .slide-body {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .slide-item {
+    display: inline-block;
+  }
+}

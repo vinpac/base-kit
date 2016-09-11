@@ -1,12 +1,17 @@
 import React, { Component } from 'react'
-import Modal from '../Modal'
+import Modal from '../base/Modal'
 import Preloader from '../elements/Preloader'
-import Dropdown from '../Dropdown'
-import DropdownButton from '../Dropdown/DropdownButton'
-import DropdownMenu from '../Dropdown/DropdownMenu'
-import NavigationDrawer from '../NavigationDrawer'
-import NavigationDrawerMenu from '../NavigationDrawer/NavigationDrawerMenu'
-import NavigationDrawerButton from '../NavigationDrawer/NavigationDrawerButton'
+import Dropdown from '../base/Dropdown'
+import DropdownButton from '../base/Dropdown/DropdownButton'
+import DropdownMenu from '../base/Dropdown/DropdownMenu'
+import NavigationDrawer from '../base/NavigationDrawer'
+import NavigationDrawerMenu from '../base/NavigationDrawer/NavigationDrawerMenu'
+import NavigationDrawerButton from '../base/NavigationDrawer/NavigationDrawerButton'
+import Slide from '../base/Slide'
+import cx from 'classnames'
+import SlideBody from '../base/Slide/SlideBody'
+import SlideNextButton from '../base/Slide/SlideNextButton'
+import SlidePreviousButton from '../base/Slide/SlidePreviousButton'
 
 export default class App extends Component {
   render() {
@@ -154,6 +159,36 @@ export default class App extends Component {
                 </div>
                 <span className="input-subtext">Email invalido</span>
               </div>
+            </div>
+          </div>
+          <h1 className="text-light margin-bottom-lg">Slide</h1>
+          <div className="row">
+            <div className="col-md-12">
+              <Slide>
+                <SlidePreviousButton>
+                  <i className="fa fa-angle-left" />
+                </SlidePreviousButton>
+                <SlideBody>
+                {
+                  [...Array(15).keys()].map(i => {
+                    return (
+                      <div
+                        key={i}
+                        className={cx("slide-item", {
+                        'bg-primary': i % 3 === 0,
+                        'bg-accent': i % 3 === 1,
+                        'bg-warn': i % 3 === 2,
+                      })}>
+                        { i }
+                      </div>
+                    )
+                  })
+                }
+                </SlideBody>
+                <SlideNextButton>
+                  <i className="fa fa-angle-right" />
+                </SlideNextButton>
+              </Slide>
             </div>
           </div>
           <h1 className="text-light margin-top-lg margin-bottom-lg">Panels</h1>
