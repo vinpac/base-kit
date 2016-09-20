@@ -1,41 +1,38 @@
-.text-muted {
-  color: $text-muted-color;
-}
+// Alignment
 
-.text-pre-muted {
-  color: $text-pre-muted-color;
-}
+.text-justify        { text-align: justify !important; }
+.text-nowrap         { white-space: nowrap !important; }
+.text-truncate       { @include text-truncate; }
 
-.text-normal {
-  font-weight: 400;
-}
+// Weight italic
+//
+.text-weight-normal { font-weight: normal; }
+.text-weight-light { font-weight: $text-light-weight; }
+.text-weight-semibold { font-weight: $text-semibold-weight; }
+.text-weight-bold { font-weight: bold; }
+.text-italic { font-style: italic; }
 
-.text-light {
-  font-weight: 300;
-}
+// Responsive alignment
 
-.text-semibold {
-  font-weight: $text-semibold-weight;
-}
+.text-left   { text-align: left !important; }
+.text-right  { text-align: right !important; }
+.text-center { text-align: center !important; }
 
-.text-center {
-  text-align: center;
-}
+// Transformation
 
-.text-lg {
-  font-size: 1.375em;
-  line-height: 2.33rem;
-}
+.text-lowercase      { text-transform: lowercase !important; }
+.text-uppercase      { text-transform: uppercase !important; }
+.text-capitalize     { text-transform: capitalize !important; }
 
-.text-md {
-  font-size: 1.125em;
-  line-height: 1.5;
-}
+// Contextual colors
 
-.text-sm {
-  font-size: .875em;
-}
+@include text-emphasis-variant('.text-muted', $text-muted);
 
-.text-upper {
-  text-transform: uppercase;
-}
+@include text-emphasis-variant('.text-muted-dark', $text-muted-dark);
+
+@include text-emphasis-variant('.text-primary', $color-primary);
+
+@include text-emphasis-variant('.text-success', $color-success);
+
+@include text-emphasis-variant('.text-warning', $color-warning);
+

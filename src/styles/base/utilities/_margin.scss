@@ -1,25 +1,36 @@
 @mixin make-margin($position, $margin) {
-  .margin-#{$position} {
-    margin-#{$position}: $margin;
+  & {
+    margin-#{$position}: $margin !important;
   }
 
-  .margin-#{$position}-lg {
-    margin-#{$position}: ($margin * 1.25);
+  &-lg {
+    margin-#{$position}: ($margin * 1.25) !important;
   }
 
-  .margin-#{$position}-md {
-    margin-#{$position}: ($margin * .5);
+  &-md {
+    margin-#{$position}: ($margin * .5) !important;
   }
 
-  .margin-#{$position}-sm {
-    margin-#{$position}: ($margin * .25);
+  &-sm {
+    margin-#{$position}: ($margin * .25) !important;
   }
 }
 
-@include make-margin(  left, $util-margin-horizontal);
-@include make-margin( right, $util-margin-horizontal);
-@include make-margin(   top, $util-margin-vertical);
-@include make-margin(bottom, $util-margin-vertical);
+.margin-left {
+  @include make-margin(left, $util-margin-horizontal);
+}
+
+.margin-right {
+  @include make-margin(right, $util-margin-horizontal);
+}
+
+.margin-top {
+  @include make-margin(top, $util-margin-vertical);
+}
+
+.margin-bottom {
+  @include make-margin(bottom, $util-margin-vertical);
+}
 
 .no-margin {
   margin: 0 !important;

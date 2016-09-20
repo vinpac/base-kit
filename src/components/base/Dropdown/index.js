@@ -77,9 +77,9 @@ export default class Dropdown extends React.Component {
   }
 
   render() {
-    const { children } = this.props
+    const { children, component:Component } = this.props
     return (
-      <this.props.component
+      <Component
         className={ this.className }
       >
         {
@@ -92,7 +92,7 @@ export default class Dropdown extends React.Component {
             return child
           })
         }
-      </this.props.component>
+      </Component>
     );
   }
 }

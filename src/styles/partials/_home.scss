@@ -1,0 +1,21 @@
+.view-home {
+  padding-bottom: 150px;
+}
+
+.slide {
+  .slide-item {
+    width: 150px;
+    height: 150px;
+    font-size: 42px;
+    text-align: center;
+    padding: 40px 30px;
+    color: #FFF;
+  }
+
+  .slide-next,
+  .slide-previous {
+    min-height: 150px;
+    font-size: 32px;
+  }
+
+}

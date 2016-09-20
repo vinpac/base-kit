@@ -16,7 +16,7 @@ import SlidePreviousButton from '../base/Slide/SlidePreviousButton'
 export default class App extends Component {
   render() {
     return (
-      <div>
+      <div className="view-home">
         <Modal className="modal-post" ref="modal">
           <div className="modal-content">
             <div className="modal-post-header">
@@ -114,7 +114,7 @@ export default class App extends Component {
             </header>
             <div className="container-md text-center">
 
-              <h2 className="margin-top-lg text-light">Just Random Text</h2>
+              <h2 className="margin-top-lg text-weight-light">Just Random Text</h2>
               <p className="text-md text-muted">Stripe is the best way to accept payments online and in mobile apps. We handle billions of dollars every year for forward-thinking businesses around the world.</p>
               <div className="row">
                 <div className="col-md-4">
@@ -142,14 +142,14 @@ export default class App extends Component {
           </div>
         </header>
         <div className="container section-padding">
-          <h1 className="text-light margin-bottom-lg">Forms</h1>
+          <h1 className="text-weight-light margin-bottom-lg">Forms</h1>
           <div className="row">
             <div className="col-md-4">
-              <h4 className="text-light text-muted margin-bottom-md">Normal input</h4>
+              <h4 className="text-weight-light text-muted margin-bottom-md">Normal input</h4>
               <input type="text" className="input" placeholder=".input"/>
             </div>
             <div className="col-md-4">
-              <h4 className="text-light text-muted margin-bottom-md">Warn</h4>
+              <h4 className="text-weight-light text-muted margin-bottom-md">Warn</h4>
               <div className="form-group form-group-warn">
                 <div className="input-group">
                   <input type="text" className="input" placeholder="Search for..." />
@@ -161,7 +161,7 @@ export default class App extends Component {
               </div>
             </div>
           </div>
-          <h1 className="text-light margin-bottom-lg">Slide</h1>
+          <h1 className="text-weight-light margin-bottom-lg">Slide</h1>
           <div className="row">
             <div className="col-md-12">
               <Slide>
@@ -177,7 +177,7 @@ export default class App extends Component {
                         className={cx("slide-item", {
                         'bg-primary': i % 3 === 0,
                         'bg-accent': i % 3 === 1,
-                        'bg-warn': i % 3 === 2,
+                        'bg-warning': i % 3 === 2,
                       })}>
                         { i }
                       </div>
@@ -191,99 +191,52 @@ export default class App extends Component {
               </Slide>
             </div>
           </div>
-          <h1 className="text-light margin-top-lg margin-bottom-lg">Panels</h1>
-          <div className="row">
-            <div className="col-md-8">
-              <div className="panel">
-                <div className="panel-header">
-                  <span className="text-upper text-semibold text-muted">Table of contents</span>
+          <h1 className="text-weight-light margin-top-lg margin-bottom-lg">Cards</h1>
+          <div className="row margin-bottom-lg">
+            <div className="col-md-4">
+              <div className="card">
+                <div className="card-header">
+                  Featured
+                </div>
+                <div className="card-block">
+                  <h4 className="card-title">Special title treatment</h4>
+                  <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" className="btn btn-primary">Go somewhere</a>
                 </div>
                 <div className="list">
                   <div className="list-item">
-                    <div className="row">
-                      <div className="col-xs-2">Content</div>
-                      <div className="col-xs-10">
-                        <ul className="nav nav-vertical">
-                          <li><a href="#What-is-Stripe-Atlas">What is Stripe Atlas?</a></li>
-                          <li><a href="#Who-should-use-Atlas">Who should use Atlas?</a></li>
-                          <li><a href="#How-do-I-get-access">How do I get access?</a></li>
-                          <li><a href="#Who-is-in-the-Stripe-Atlas-network">Who is in the Stripe Atlas network?</a></li>
-                          <li><a href="#Can-I-use-Stripe-Atlas-if-I-m-based-in-a-country-Stripe-already-supports">Can I use Stripe Atlas if I’m based in a country Stripe already supports?</a></li>
-                          <li><a href="#Can-I-use-Stripe-Atlas-if-I-m-based-in-Cuba">Can I use Stripe Atlas if I’m based in Cuba?</a></li>
-                          <li><a href="#What-does-Atlas-cost">What does Atlas cost?</a></li>
-                          <li><a href="#Are-there-any-additional-costs-I-should-be-aware-of">Are there any additional costs I should be aware of?</a></li>
-                          <li><a href="#What-resources-will-I-receive-from-Amazon-Web-Services">What resources will I receive from Amazon Web Services?</a></li>
-                          <li><a href="#Who-advises-Stripe-Atlas">Who advises Stripe Atlas?</a></li>
-                        </ul>
-                      </div>
-                    </div>
+                    Teste
                   </div>
-                  <a href="" className="list-item list-item-action">
-                    Teste <i className="fa fa-angle-right pull-right"></i>
-                  </a>
-                  <div className="list-item"></div>
+                  <div className="list-item">
+                    Teste
+                  </div>
                 </div>
               </div>
             </div>
             <div className="col-md-4">
-              <div className="panel panel-success">
-                <div className="panel-header">
-                  <span className="text-upper">Yeah</span>
+              <div className="card card-block">
+                <h4 className="card-title">Card title</h4>
+                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" className="card-link">Card link</a>
+                <a href="#" className="card-link">Another link</a>
+              </div>
+              <div className="card">
+                <div className="card-header">
+                  Featured
                 </div>
-                <div className="panel-body">
-                  <p className="no-margin">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate repellendus cum provident ipsa vitae ipsam placeat quia sint, quo quibusdam illum dolores facere nobis hic optio officiis pariatur porro cumque?</p>
+                <div className="card-block">
+                  <h4 className="card-title">Special title treatment</h4>
+                  <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" className="btn btn-primary">Go somewhere</a>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="container section-padding">
-          <div className="row">
-            <div className="col-lg-6">
-              <article className="article">
-                <div className="img-cover" />
-                <div className="article-content">
-                  <img src="https://stripe.com/img/v3/gallery/quote-logos/kickstarter.png" width="182" height="22" alt="Kickstarter"/>
-                  <p className="margin-top-md">Kickstarter switched to Stripe to accelerate their support for international creators. Since partnering with Stripe to navigate international payment methods and compliance, Kickstarter’s phenomenally successful platform for creative projects is now available to creators in 18 countries.</p>
+                <div className="list">
+                  <div className="list-item">
+                    Teste
+                  </div>
+                  <div className="list-item">
+                    Teste
+                  </div>
                 </div>
-              </article>
-            </div>
-            <div className="col-lg-6">
-              <div className="article-text-content">
-                <p className="text-lg text-pre-muted">The best platforms own their user experience from end to end, including payments. Purchasing is woven into Twitter and Shopify. Kickstarter and Squarespace get their sellers paid seamlessly. These services work just right.</p>
-                <p className="text-muted">It only takes a few minutes to start adding commerce to your platform. To manage payments, you can set up Stripe accounts for sellers from 25 countries (more coming soon). Or own the look and feel yourself and have sellers do everything within your platform.</p>
-                <p className="text-muted">With Stripe, Squarespace went from a site-builder to a store-builder—growing its customer base by becoming more useful to more people. And thousands of other platforms around the world are bringing payments in-house with Stripe.</p>
-                <hr className="hr-muted hr-lg"/>
-                <ul className="nav nav-vertical">
-                  <li><a href="">Bring payments to your platform</a></li>
-                  <li><a href="">Create a ’Buy Now’ button for your app</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="bg-blue section-padding">
-          <div className="container">
-            <div className="row around-xs margin-bottom">
-              <div className="col-lg-8">
-                <p className="text-lg text-pre-muted">The on-demand economy gives the people what they want, now: rides, food, accommodation, and more. Your payments should meet the same high standards as your product experience: with just a tap, Stripe helps sellers on your marketplace get paid.</p>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-lg-12">
-                <article className="article-2 margin-top margin-bottom-lg"></article>
-              </div>
-            </div>
-            <div className="row around-xs">
-              <div className="col-lg-5">
-                <p className="text-muted">Payments for <span>market­places</span> used to be hard: accounting for seller earnings, making en-masse payouts happen (on time!), managing 1099-Ks and tax reporting, regulatory compliance. Marketplaces shouldn’t have to build all that from scratch, so we made Stripe Connect to provide all the tools you need to run a multi-sided marketplace.</p>
-              </div>
-              <div className="col-lg-5">
-                <p className="text-muted">Integrating Connect means always having access to the state-of-the-art. In October 2015, we started piloting <a href="">instant debit card transfers</a>. And Connect is now available to marketplaces in <a href="">25 countries</a>.</p>
-                <hr className="hr-muted hr-lg"/>
-                <ul className="nav nav-vertical">
-                  <li><a href="">Read more about Connect</a></li>
-                </ul>
               </div>
             </div>
           </div>

@@ -1,0 +1,74 @@
+//
+// Base styles
+//
+
+.card {
+  position: relative;
+  display: block;
+  background-color: $card-bg;
+  margin-bottom: $card-spacer-y;
+  border-radius: $card-border-radius;
+  border: $card-border-width solid $card-border-color;
+}
+
+.card-block {
+  @include clearfix;
+  padding: $card-spacer-x;
+}
+
+.card-header {
+  @include clearfix;
+  padding: $card-spacer-y $card-spacer-x;
+  margin-bottom: 0; // Removes the default margin-bottom of <hN>
+  background-color: $card-header-bg;
+  border-bottom: $card-border-width solid $card-border-color;
+
+  &:first-child {
+    border-radius: $card-border-radius $card-border-radius 0 0;
+  }
+}
+
+.card-title {
+  margin-bottom: $card-spacer-y;
+}
+
+.card-subtitle {
+  margin-top: -($card-spacer-y / 2);
+  margin-bottom: 0;
+}
+
+.card-text:last-child {
+  margin-bottom: 0;
+}
+
+// .card-actions {
+//   padding: $card-spacer-y $card-spacer-x;
+
+//   .card-link + .card-link {
+//     margin-left: $card-spacer-x;
+//   }
+// }
+
+.card-link {
+  &:hover {
+    text-decoration: none;
+  }
+
+  + .card-link {
+    margin-left: $card-spacer-x;
+  }
+}
+
+.card {
+  > .list:first-child {
+    .list-item:first-child {
+      border-radius: $card-border-radius;
+    }
+  }
+
+  > .list:last-child {
+    .list-item:last-child {
+      border-radius: 0 0 $card-border-radius $card-border-radius;
+    }
+  }
+}

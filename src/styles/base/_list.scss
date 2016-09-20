@@ -7,6 +7,7 @@
 .list-item {
   border-top: 1px solid #ddd;
   display: block;
+  padding: $list-item-spacer-y $list-item-spacer-x;
 }
 
 .list-item-action {

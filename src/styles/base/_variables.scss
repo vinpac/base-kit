@@ -8,8 +8,8 @@ $enable-flex: true;
 $color-primary: #007ee5 !default;
 $color-primary-dark: #026DC5 !default;
 $color-accent: #E91E63 !default;
-
-$color-warn: #D32F2F !default;
+$color-success: #60BB4D;
+$color-warning: #D32F2F !default;
 
 // Variables
 $grid-breakpoints: (
@@ -34,7 +34,7 @@ $line-height-base: 1.5 !default;
 $line-height-paragraph: $line-height-base !default;
 $font-size-root: 16px !default;
 $font-size-base: 16px !default;
-$text-color: #333 !default;
+$text-color-base: #333 !default;
 $body-bg: #FFF !default;
 
 
@@ -47,7 +47,7 @@ $font-size-h6: 1rem !default;
 
 $headings-margin-bottom: .5rem !default;
 $headings-line-height: 1.15 !default;
-$headings-font-weight: bold !default;
+$headings-font-weight: 500 !default;
 $headings-color: inherit !default;
 
 // Grid
@@ -63,18 +63,13 @@ $btn-border-radius: 3px !default;
 
 $btn-circle-size: 2.375rem;
 
-$btn-default-bg: #9DA6AF !default;
-$btn-success-bg: #60BB4D !default;
-
-
-
 // Forms
 $input-padding-x: .65rem !default;
 $input-padding-y: .5rem !default;
 $input-line-height: 1.2 !default;
 $input-bg: #FFF !default;
 $input-border-color: #ccc !default;
-$input-color: $text-color !default;
+$input-color: $text-color-base !default;
 $input-color-placeholder: rgba(#000,.35) !default;
 $input-border-radius: 4px !default;
 
@@ -93,14 +88,20 @@ $modal-sizes: (
   lg: 868px
 ) !default;
 
-// Panel
-$panel-bg: #FFF;
-$panel-header-bg: #FBFCFD;
-$panel-border-color: #E3E8F6;
-$panel-border-width: 2px;
-$panel-border-radius: 6px;
+// Card
+$card-bg: #FFF !default;
+$card-header-bg: #FBFCFD !default;
+$card-border-width: 1px !default;
+$card-border-color: #E3E8F6 !default;
+$card-border-radius: 6px !default;
+$card-spacer-x: 1.25rem;
+$card-spacer-y: .75rem;
 
-// link
+// List
+$list-item-spacer-y: .75rem;
+$list-item-spacer-x: 1.25rem;
+
+// Link
 $link-color: #007ee5 !default;
 $link-decoration: none !default;
 $link-hover-color: $link-color !default;
@@ -110,9 +111,13 @@ $link-hover-decoration: underline !default;
 $util-margin-horizontal: 1.25rem !default;
 $util-margin-vertical: 2rem !default;
 
-$text-pre-muted-color: #666 !default;
-$text-muted-color: #999 !default;
-$text-semibold-weight: 500;
+// Text
+$text-muted: #999 !default;
+$text-muted-dark: #666 !default;
 
-$hr-color: rgba(0,0,0,.1);
-$hr-muted-color: rgba(0,0,0,.05);
+$text-light-weight: 300 !default;
+$text-semibold-weight: 500 !default;
+
+// Hr
+$hr-color: rgba(0,0,0,.1) !default;
+$hr-muted-color: rgba(0,0,0,.05) !default;

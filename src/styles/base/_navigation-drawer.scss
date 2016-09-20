@@ -2,7 +2,7 @@
   display: none;
 }
 
-@include media-breakpoint-down(sm, $grid-breakpoints) {
+@include media-breakpoint-down(sm) {
   .nav-drawer-menu {
     position: fixed;
     width: 300px;

@@ -14,7 +14,7 @@
   &:hover,
   &:focus {
     text-decoration: none;
-    color: $text-color;
+    color: $text-color-base;
   }
 }
 
@@ -69,10 +69,6 @@
     display: block;
     padding: .425rem;
   }
-}
-
-.navbar-default {
-  @include make-navbar(null, $text-color);
 }
 
 .nav-button {

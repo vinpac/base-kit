@@ -52,7 +52,7 @@ label {
 }
 
 .form-group-warn {
-  @include form-group-state($color-warn);
+  @include form-group-state($color-warning);
 }
 
 .form-group {

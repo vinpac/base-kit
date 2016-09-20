@@ -1,18 +1,16 @@
 import React from 'react';
 
-const DropdownButton = (props) => {
-  const { children, className, onClick } = props
+const DropdownButton = ({ component: Component, className, children, ...props}) => {
   return (
-    <props.component className={className} onClick={onClick}>
+    <Component {...props} className={`dropdown-button ${className}`}>
       { children }
-    </props.component>
+    </Component>
   );
 };
 
 DropdownButton.displayName = 'DropdownButton';
 DropdownButton.defaultProps = {
-  component: 'button',
-  className: 'dropdown-button'
+  component: 'button'
 }
 
 export default DropdownButton;

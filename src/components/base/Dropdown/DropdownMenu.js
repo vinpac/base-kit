@@ -1,18 +1,17 @@
 import React from 'react';
+import cx from 'classnames';
 
-const DropdownMenu = (props) => {
-  const { children, className, onClick } = props
+const DropdownMenu = ({ component: Component, className, children, ...props}) => {
   return (
-    <props.component className={className} onClick={onClick}>
+    <Component {...props} className={`dropdown-menu ${className}`}>
       { children }
-    </props.component>
+    </Component>
   );
 };
 
 DropdownMenu.displayName = 'DropdownMenu';
 DropdownMenu.defaultProps = {
-  component: 'div',
-  className: 'dropdown-menu'
+  component: 'div'
 }
 
 export default DropdownMenu;
