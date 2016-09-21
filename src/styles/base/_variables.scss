@@ -68,10 +68,15 @@ $input-padding-x: .65rem !default;
 $input-padding-y: .5rem !default;
 $input-line-height: 1.2 !default;
 $input-bg: #FFF !default;
+$input-border-width: 1px !default;
 $input-border-color: #ccc !default;
 $input-color: $text-color-base !default;
 $input-color-placeholder: rgba(#000,.35) !default;
 $input-border-radius: 4px !default;
+
+$input-group-addon-bg: #FAFAFB  !default;
+$input-btn-border-width: $input-border-width  !default;
+$input-group-addon-border-color: $input-border-color !default;
 
 // Dropdown
 $dropdown-item-padding-x: 1.4rem;
@@ -100,6 +105,7 @@ $card-spacer-y: .75rem;
 // List
 $list-item-spacer-y: .75rem;
 $list-item-spacer-x: 1.25rem;
+$list-item-action-bg: #F5F5F5;
 
 // Link
 $link-color: #007ee5 !default;

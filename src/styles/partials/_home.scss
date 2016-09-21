@@ -10,12 +10,28 @@
     text-align: center;
     padding: 40px 30px;
     color: #FFF;
+    margin-right: 10px;
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 
   .slide-next,
   .slide-previous {
     min-height: 150px;
-    font-size: 32px;
+    font-size: 48px;
   }
 
+  &.slide-absolute {
+    .slide-next,
+    .slide-previous {
+      color: #fff;
+      background: rgba(#000, .2);
+    }
+
+    .slide-body {
+      padding: 0 110px;
+    }
+  }
 }

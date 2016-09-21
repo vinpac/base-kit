@@ -9,7 +9,7 @@
   bottom: 0;
   top: 0;
   z-index: 500;
-  transition: background .2s, opacity .1s;
+  transition: background .5s, opacity .5s;
   height: 0;
   width: 0;
   overflow: hidden;
@@ -32,10 +32,13 @@
   }
 
   .modal-content {
-    background: #fff;
-    border-radius: 3px;
     margin: 0 auto;
     position: relative;
+  }
+
+  .modal-card {
+    background: #fff;
+    border-radius: 3px;
   }
 
   .modal-footer,
@@ -62,5 +65,4 @@
       }
     }
   }
-
 }

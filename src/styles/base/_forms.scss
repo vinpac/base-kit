@@ -20,14 +20,13 @@
     opacity: 1;
   }
 
-  &:hover,
-  &:focus,
-  &.focus {
-    border-color: $color-primary;
+  &:hover {
+    border-color: darken($input-border-color, 10%)
   }
 
   &:focus,
   &.focus {
+    border-color: $color-primary;
     box-shadow: 0 0 7px rgba(39,128,248,.15);
   }
 }

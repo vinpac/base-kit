@@ -17,20 +17,22 @@ export default class App extends Component {
   render() {
     return (
       <div className="view-home">
-        <Modal className="modal-post" ref="modal">
+        <Modal className="modal-post scale" ref="modal">
           <div className="modal-content">
-            <div className="modal-post-header">
-              <button className="btn btn-transparent text-semibold text-sm">vini175pa <i className="fa fa-angle-down margin-left-sm" /></button>
-              <button className="btn btn-transparent text-muted right"><i className="fa fa-cog" /></button>
-            </div>
-            <img src="https://67.media.tumblr.com/2af43f6ba6e3da9390722394e68c16cc/tumblr_oc5czpi6i51qz7t0xo1_540.jpg" className="fill-width" alt=""/>
-            <div className="modal-body margin-top">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error veniam, incidunt veritatis quia eaque nostrum dolor adipisci illo quibusdam placeat alias cupiditate debitis sint aut aperiam, expedita consequatur quasi deserunt.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error veniam, incidunt veritatis quia eaque nostrum dolor adipisci illo quibusdam placeat alias cupiditate debitis sint aut aperiam, expedita consequatur quasi deserunt.</p>
-            </div>
-            <div className="modal-footer">
-              <button className="btn small btn-outline-default" onClick={() => this.refs.modal.toggle()}>Cancel</button>
-              <button className="btn small btn-primary right"><Preloader medium light/></button>
+            <div className="modal-card">
+              <div className="modal-post-header">
+                <button className="btn btn-transparent text-semibold text-sm">vini175pa <i className="fa fa-angle-down margin-left-sm" /></button>
+                <button className="btn btn-transparent text-muted right"><i className="fa fa-cog" /></button>
+              </div>
+              <img src="https://67.media.tumblr.com/2af43f6ba6e3da9390722394e68c16cc/tumblr_oc5czpi6i51qz7t0xo1_540.jpg" className="fill-width" alt=""/>
+              <div className="modal-body margin-top">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error veniam, incidunt veritatis quia eaque nostrum dolor adipisci illo quibusdam placeat alias cupiditate debitis sint aut aperiam, expedita consequatur quasi deserunt.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error veniam, incidunt veritatis quia eaque nostrum dolor adipisci illo quibusdam placeat alias cupiditate debitis sint aut aperiam, expedita consequatur quasi deserunt.</p>
+              </div>
+              <div className="modal-footer">
+                <button className="btn card-link small btn-outline-default" onClick={() => this.refs.modal.toggle()}>Cancel</button>
+                <button className="btn card-link small btn-primary right"><Preloader medium light/></button>
+              </div>
             </div>
           </div>
         </Modal>
@@ -149,9 +151,12 @@ export default class App extends Component {
               <input type="text" className="input" placeholder=".input"/>
             </div>
             <div className="col-md-4">
-              <h4 className="text-weight-light text-muted margin-bottom-md">Warn</h4>
-              <div className="form-group form-group-warn">
+              <h4 className="text-weight-light text-muted margin-bottom-md">Input group</h4>
+              <div className="form-group">
                 <div className="input-group">
+                  <span className="input-group-addon">
+                    { window.location.host }/
+                  </span>
                   <input type="text" className="input" placeholder="Search for..." />
                   <span className="input-group-btn">
                     <button className="btn btn-outline-primary" type="button">Continue</button>
@@ -164,7 +169,7 @@ export default class App extends Component {
           <h1 className="text-weight-light margin-bottom-lg">Slide</h1>
           <div className="row">
             <div className="col-md-12">
-              <Slide>
+              <Slide className="slide-absolute">
                 <SlidePreviousButton>
                   <i className="fa fa-angle-left" />
                 </SlidePreviousButton>
@@ -207,6 +212,9 @@ export default class App extends Component {
                   <div className="list-item">
                     Teste
                   </div>
+                  <a className="list-item list-item-action">
+                    Teste
+                  </a>
                   <div className="list-item">
                     Teste
                   </div>
@@ -217,8 +225,8 @@ export default class App extends Component {
               <div className="card card-block">
                 <h4 className="card-title">Card title</h4>
                 <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" className="btn btn-outline-primary card-link">Another link</a>
                 <a href="#" className="card-link">Card link</a>
-                <a href="#" className="card-link">Another link</a>
               </div>
               <div className="card">
                 <div className="card-header">

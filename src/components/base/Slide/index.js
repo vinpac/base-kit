@@ -4,6 +4,7 @@ import SmoothMovement from '../../../utils/SmoothMovement'
 import SlideBody from './SlideBody'
 import SlidePreviousButton from './SlidePreviousButton'
 import SlideNextButton from './SlideNextButton'
+import cx from 'classnames'
 
 class Slide extends React.Component {
 
@@ -58,10 +59,10 @@ class Slide extends React.Component {
   }
 
   render() {
-    const { children } = this.props
+    const { children, className } = this.props
     const self = this
     return (
-      <div className="slide">
+      <div className={cx("slide", className)}>
         {
           React.Children.map(children, (child) => {
             switch(child.type) {
