@@ -1,17 +1,13 @@
-import React from 'react';
+import React from 'react'
 
 class SlideBody extends React.Component {
-  static propTypes = {
-    component: React.PropTypes.string,
-  };
-
   render() {
-    const { children } = this.props
+    const { className, children, ...props } = this.props
     return (
-      <div className="slide-body" {...this.props}>
+      <div className={`slide-body ${className}`} {...props}>
         { children }
       </div>
-    );
+    )
   }
 }
 

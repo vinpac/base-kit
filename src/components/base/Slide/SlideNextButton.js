@@ -1,11 +1,10 @@
 import React from 'react';
 
-const SlideNextButton = (props) => {
-  const { component, children, ...parsedProps} = props;
+const SlideNextButton = ({ component:Component, children, className, ...props}) => {
   return (
-    <props.component className="slide-next" {...parsedProps}>
+    <Component className={`slide-next ${className}`} {...props}>
       { children }
-    </props.component>
+    </Component>
   );
 };
 

@@ -1,7 +1,6 @@
 import React from 'react';
-import cx from 'classnames';
 
-const DropdownMenu = ({ component: Component, className, children, ...props}) => {
+const DropdownMenu = ({ component: Component, children, className, ...props}) => {
   return (
     <Component {...props} className={`dropdown-menu ${className}`}>
       { children }

@@ -1,15 +1,15 @@
 import React from 'react';
 
-const SlidePreviousButton = (props) => {
-  const { component, children, ...parsedProps} = props;
+const SlidePreviousButton = ({ component:Component, className, children, ...props}) => {
   return (
-    <props.component className="slide-previous" {...parsedProps}>
+    <Component className={`slide-previous ${className}`} {...props}>
       { children }
-    </props.component>
+    </Component>
   );
 };
 
 SlidePreviousButton.displayName = 'SlidePreviousButton';
+
 SlidePreviousButton.defaultProps = {
   component: 'button'
 }
