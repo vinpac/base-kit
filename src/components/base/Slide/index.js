@@ -15,13 +15,16 @@ class Slide extends React.Component {
     super(props);
 
     this.movement = null;
+    this.state = { onCorner: 'left' }
 
     this.previousPage = this.previousPage.bind(this)
     this.nextPage = this.nextPage.bind(this)
+    this.syncCornerState = this.syncCornerState.bind(this)
   }
 
   previousPage() {
     const node = ReactDOM.findDOMNode(this.refs.body)
+    this.syncCornerState(node, 'left')
     if (node.scrollLeft !== 0 && !(this.movement && this.movement.target === 0)) {
       this.scrollTo(Math.max(0, node.scrollLeft - node.offsetWidth))
     }
@@ -30,8 +33,24 @@ class Slide extends React.Component {
   nextPage() {
     const node = ReactDOM.findDOMNode(this.refs.body)
     const maxScrollLeft = node.scrollWidth - node.offsetWidth;
+    this.syncCornerState(node, 'right')
     if (node.scrollLeft < maxScrollLeft && !(this.movement && this.movement.target >= maxScrollLeft)) {
-      this.scrollTo(Math.min(node.scrollLeft + node.offsetWidth, node.scrollWidth))
+      this.scrollTo(Math.min(node.scrollLeft + node.offsetWidth, node.scrollWidth - node.offsetWidth))
+    }
+  }
+
+  syncCornerState(node, goingTo=null) {
+    const { onCorner } = this.state;
+    if (node.scrollLeft === 0 && goingTo !== 'right') {
+      if (onCorner !== 'left') {
+        this.setState({ onCorner: 'left' })
+      }
+    } else if( node.scrollLeft === node.scrollWidth - node.offsetWidth  && goingTo !== 'left') {
+      if (onCorner !== 'right') {
+        this.setState({ onCorner: 'right' })
+      }
+    } else if( onCorner !== null) {
+      this.setState({ onCorner: null })
     }
   }
 
@@ -53,15 +72,17 @@ class Slide extends React.Component {
       },
       movement => {
         self.movement = null
+        self.syncCornerState(node)
       }
     )
   }
 
   render() {
     const { children, className } = this.props
+    const { onCorner } = this.state
     const self = this
     return (
-      <div className={`slide ${className}`}>
+      <div className={`slide ${className || ""}`}>
         {
           React.Children.map(children, (child) => {
             switch(child.type) {
@@ -71,11 +92,13 @@ class Slide extends React.Component {
                 })
               case SlidePreviousButton:
                 return React.cloneElement(child, {
-                  onClick: self.previousPage
+                  onClick: self.previousPage,
+                  reachedCorner: onCorner === 'left'
                 })
             case SlideNextButton:
                 return React.cloneElement(child, {
-                  onClick: self.nextPage
+                  onClick: self.nextPage,
+                  reachedCorner: onCorner === 'right'
                 })
               default:
                 return child

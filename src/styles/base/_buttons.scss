@@ -12,6 +12,9 @@
   font-size: $font-size-base;
   border-radius: $btn-border-radius;
   outline: none !important;
+  background: #fff;
+  border-color: $input-border-color;
+  color: $text-color-base;
 }
 
 a.btn {

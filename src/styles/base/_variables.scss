@@ -7,7 +7,7 @@ $enable-flex: true;
 // Colors
 $color-primary: #007ee5 !default;
 $color-primary-dark: #026DC5 !default;
-$color-accent: #E91E63 !default;
+$color-accent: #6772E5 !default;
 $color-success: #60BB4D;
 $color-warning: #D32F2F !default;
 
@@ -55,24 +55,30 @@ $grid-columns: 12 !default;
 $grid-gutter-width: 30px !default;
 
 // Buttons
-$btn-padding-y: .5rem !default;
+$btn-padding-y: .6rem !default;
 $btn-padding-x: 1rem !default;
 $btn-line-height: 1.25 !default;
-$btn-font-weight: 600 !default;
+$btn-font-weight: 500 !default;
 $btn-border-radius: 3px !default;
 
 $btn-circle-size: 2.375rem;
 
 // Forms
 $input-padding-x: .65rem !default;
-$input-padding-y: .5rem !default;
+$input-padding-y: .6rem !default;
 $input-line-height: 1.2 !default;
 $input-bg: #FFF !default;
 $input-border-width: 1px !default;
 $input-border-color: #ccc !default;
+$input-border-color-highlight: $color-primary !default;
 $input-color: $text-color-base !default;
 $input-color-placeholder: rgba(#000,.35) !default;
 $input-border-radius: 4px !default;
+$input-checkbox-size: 20px;
+$input-checkbox-checked-bg: $color-accent !default;
+$input-checkbox-icon: url('../../images/icon-check.svg') !default;
+
+$input-style-check-n-radio: true !default;
 
 $input-group-addon-bg: #FAFAFB  !default;
 $input-btn-border-width: $input-border-width  !default;

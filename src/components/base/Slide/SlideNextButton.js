@@ -1,8 +1,9 @@
-import React from 'react';
+import React from 'react'
+import cx from 'classnames'
 
-const SlideNextButton = ({ component:Component, children, className, ...props}) => {
+const SlideNextButton = ({ component:Component, reachedCorner, children, className, ...props}) => {
   return (
-    <Component className={`slide-next ${className}`} {...props}>
+    <Component className={cx('slide-next', { 'slide-on-corner': reachedCorner }, className)} {...props}>
       { children }
     </Component>
   );

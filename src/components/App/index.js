@@ -118,28 +118,7 @@ export default class App extends Component {
 
               <h2 className="margin-top-lg text-weight-light">Just Random Text</h2>
               <p className="text-md text-muted">Stripe is the best way to accept payments online and in mobile apps. We handle billions of dollars every year for forward-thinking businesses around the world.</p>
-              <div className="row">
-                <div className="col-md-4">
-                  <select name="" id="" className="input input-lg">
-                    <option value="">Chose</option>
-                    <option value="">aa</option>
-                  </select>
-                </div>
-                <div className="col-md-4">
-                  <input type="text" className="input input-lg" placeholder="you@domain.com"/>
-                </div>
-                <div className="col-md-4">
-                  <button
-                    className="btn btn-lg btn-primary"
-                    onClick={() => this.refs.modal.toggle() }
-                    >
-                    Open modal
-                  </button>
-                  <button className="btn btn-circle margin-left-md btn-primary">
-                    <i className="fa fa-pencil" />
-                  </button>
-                </div>
-              </div>
+              <button className="btn btn-accent text-uppercase">Create stripe account</button>
             </div>
           </div>
         </header>
@@ -165,8 +144,41 @@ export default class App extends Component {
                 <span className="input-subtext">Email invalido</span>
               </div>
             </div>
+            <div className="col-md-4">
+              <h4 className="text-weight-light text-muted margin-bottom-md">Input group</h4>
+              <div className="input-group input-group-2">
+                <input type="text" className="input" placeholder="you@domain.com"/>
+                <div className="input-group-btn">
+                  <button className="btn text-uppercase">Notify me</button>
+                </div>
+              </div>
+
+            </div>
           </div>
-          <h1 className="text-weight-light margin-bottom-lg">Slide</h1>
+          <div className="row">
+            <div className="col-md-4">
+              <h4 className="text-weight-light text-muted margin-bottom-md">Checkbox and Radio</h4>
+              <label>
+                <input type="checkbox" className="input margin-right-md"/>
+                <span>Teste</span>
+              </label>
+              <label className="margin-left">
+                <input type="checkbox" className="input margin-right-md"/>
+                <span>Teste</span>
+              </label>
+              <div className="margin-top-sm">
+                <label className="margin-right">
+                  <input name="teste" type="radio" className="input margin-right-md"/>
+                  <span>Teste</span>
+                </label>
+                <label className="margin-right">
+                  <input name="teste" type="radio" className="input margin-right-md"/>
+                  <span>Teste</span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <h1 className="text-weight-light margin-top-lg margin-bottom-lg">Slide</h1>
           <div className="row">
             <div className="col-md-12">
               <Slide className="slide-absolute">
@@ -181,7 +193,7 @@ export default class App extends Component {
                         key={i}
                         className={cx("slide-item", {
                         'bg-primary': i % 3 === 0,
-                        'bg-accent': i % 3 === 1,
+                        'bg-success': i % 3 === 1,
                         'bg-warning': i % 3 === 2,
                       })}>
                         { i }

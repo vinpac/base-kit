@@ -26,7 +26,7 @@
 
   &:focus,
   &.focus {
-    border-color: $color-primary;
+    border-color: $input-border-color-highlight;
     box-shadow: 0 0 7px rgba(39,128,248,.15);
   }
 }
@@ -61,4 +61,41 @@ label {
 
 .form-group {
   margin-bottom: 0.75rem;
+}
+
+
+// Radio and Checkbox
+
+@if $input-style-check-n-radio {
+  .input[type="checkbox"],
+  .input[type="radio"] {
+    width: $input-checkbox-size;
+    height: $input-checkbox-size;
+    transition: all .15s ease;
+    appearance: none;
+    vertical-align: -4px;
+    cursor: pointer;
+    position: relative;
+    border-width: 0;
+    background: center no-repeat;
+
+    &,
+    &:focus {
+      box-shadow: inset 0 0 0 2px rgba(207,215,223,.75);
+    }
+
+    &:hover {
+      box-shadow: inset 0 0 0 3px rgba(207,215,223,.75);
+    }
+
+    &:checked {
+      box-shadow: none;
+      background-image: $input-checkbox-icon;
+      background-color: $input-checkbox-checked-bg;
+    }
+  }
+
+  .input[type="radio"] {
+    border-radius: 50%;
+  }
 }

@@ -19,19 +19,132 @@
 
   .slide-next,
   .slide-previous {
-    min-height: 150px;
+    width: 72px;
+    height: 72px;
     font-size: 48px;
+    border-radius: 50%;
+    background: $color-accent;
+    text-align: center;
+    padding: 0;
+    margin: auto 30px;
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+    transition: all .2s ease;
+
+    &.slide-on-corner {
+      transform: scale(.5);
+      opacity: 0;
+      overflow: hidden;
+    }
   }
 
   &.slide-absolute {
     .slide-next,
     .slide-previous {
       color: #fff;
-      background: rgba(#000, .2);
     }
 
-    .slide-body {
-      padding: 0 110px;
+  }
+}
+
+
+.input-group-2 {
+  .input {
+    border-right-width: 0;
+
+    &:hover {
+      + .input-group-btn .btn {
+        border-color: darken($input-border-color, 10%)
+      }
+    }
+
+    &:focus {
+      box-shadow: none;
+      + .input-group-btn .btn {
+        border-color: $input-border-color-highlight;
+      }
+    }
+  }
+
+  .btn {
+    position: relative;
+    color: #7795f8;
+    transition: .2s;
+    border-left-width: 0;
+
+    &:hover {
+      color: #7795f8;
+    }
+
+    &:active {
+      color: #555abf;
+      background-color: #f6f9fc;
+
+      &:before {
+        display: none;
+      }
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 7px;
+      bottom: 7px;
+      width: 2px;
+      margin: auto;
+      background: rgba(#000, .04);
     }
   }
 }
+
+.input-group-3 {
+  border-radius: $input-border-radius;
+  box-shadow: 0 1px 3px rgba(50,50,93,.15),0 1px 0 rgba(0,0,0,.02);
+
+  .input {
+    border-color: transparent;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  &.active {
+    box-shadow: 0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08);
+  }
+
+  .btn {
+    position: relative;
+    text-transform: uppercase;
+    color: #7795f8;
+    font-weight: 500;
+    transition: .2s;
+
+    &:hover {
+      color: #7795f8;
+    }
+
+    &:active {
+      color: #555abf;
+      background-color: #f6f9fc;
+
+      &:before {
+        display: none;
+      }
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 7px;
+      bottom: 7px;
+      width: 2px;
+      margin: auto;
+      background: rgba(#000, .04);
+    }
+  }
+}
+
+
+
