@@ -11,7 +11,7 @@
 }
 
 .btn-outline-accent {
-  @include button-outline-variant($color-accent, transparent);
+  @include button-outline-variant($color-accent);
 }
 
 .btn-default {
@@ -50,6 +50,10 @@
 
 
 // Text
+
+.btn-default-text {
+  @include button-text($text-color-base);
+}
 
 .btn-accent-text {
   @include button-text($color-accent);

@@ -89,6 +89,7 @@ $input-group-addon-border-color: $input-border-color !default;
 $dropdown-item-padding-x: 1.4rem;
 $dropdown-item-padding-y: .38rem;
 $dropdown-border-radius: 4px;
+$dropdown-menu-zindex: 5999;
 
 // Modal
 $modal-bg: rgba(#000, .6) !default;
@@ -121,7 +122,7 @@ $link-hover-color: $link-color !default;
 $link-hover-decoration: underline !default;
 
 // Margin
-$margin-horizontal: .5rem 1rem 1.25rem !default;
+$margin-horizontal: .5rem .8rem 1.25rem !default;
 $margin-vertical: 1rem 2rem 2.5rem !default;
 
 // Text
@@ -134,3 +135,9 @@ $text-semibold-weight: 500 !default;
 // Hr
 $hr-color: rgba(0,0,0,.1) !default;
 $hr-muted-color: rgba(0,0,0,.05) !default;
+
+// Table
+$table-border-radius: 6px;
+$table-border-color: #eceeef;
+$table-bg: #FFF;
+$table-text-color: $text-color-base;

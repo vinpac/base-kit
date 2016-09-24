@@ -1,4 +1,3 @@
-.btn-text,
 .btn {
   text-align: center;
   white-space: nowrap;
@@ -10,9 +9,6 @@
   user-select: none;
   outline: none !important;
   color: $text-color-base;
-}
-
-.btn {
   border: 1px solid;
   padding: $btn-padding-y $btn-padding-x;
   font-size: $font-size-base;
@@ -21,16 +17,10 @@
   border-color: $input-border-color;
 }
 
-a.btn,
-a.btn-text {
+a.btn {
   &:hover, &:focus {
     text-decoration: none;
   }
-}
-
-.btn-transparent  {
-  background: rgba(#FFF, 0);
-  border-color: rgba(#FFF, 0);
 }
 
 .btn-circle {

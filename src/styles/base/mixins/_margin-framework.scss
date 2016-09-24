@@ -1,0 +1,15 @@
+@mixin make-margins($position, $margin-list, $breakpoints: $grid-breakpoints) {
+  @each $breakpoint in map-keys($breakpoints) {
+    @include media-breakpoint-up($breakpoint, $breakpoints) {
+      .mg-#{$breakpoint}-#{$position}-none {
+        margin-#{$position}: 0 !important;
+      }
+
+      @for $i from 1 through length($margin-list) {
+        .mg-#{$breakpoint}-#{$position}-#{$i} {
+          margin-#{$position}: nth($margin-list, $i);
+        }
+      }
+    }
+  }
+}

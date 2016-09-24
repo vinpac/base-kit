@@ -5,12 +5,27 @@
     display: block;
   }
 
+  .dropdown-header {
+    padding: 1.2rem $dropdown-item-padding-x;
+    border-radius: $dropdown-border-radius $dropdown-border-radius 0 0 ;
+  }
+
+  .dropdown-footer {
+    display: block;
+    padding: 1.2rem $dropdown-item-padding-x;
+    border-radius: 0 0 $dropdown-border-radius $dropdown-border-radius;
+  }
+
+  .dropdown-title {
+    margin: 0;
+  }
+
   .dropdown-menu {
     position: absolute;
     background: $color;
     border-radius: $dropdown-border-radius;
     box-shadow: 0 1px 2px rgba(0,0,0,.25), 0 0 1px rgba(0,0,0,.35);
-    z-index: 10;
+    z-index: $dropdown-menu-zindex;
     min-width: 130px;
     left: 10px;
     display: none;

@@ -1,6 +1,10 @@
 .footer-default {
-  background: #F6F9FC;
-  padding: 100px 0;
+  position: relative;
+
+  .footer-content {
+    background: #F6F9FC;
+    padding: 100px 0;
+  }
 
   hr {
     margin: 3rem 0;
@@ -31,5 +35,10 @@
 
   .nav + .nav {
     margin-left: 40px;
+  }
+
+  .footer-cards {
+    padding-top: 100px;
+    background: linear-gradient(to right bottom, #FFF 50%, #F6F9FC 50%);
   }
 }

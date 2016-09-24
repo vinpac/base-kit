@@ -9,9 +9,10 @@ class Dropdown extends React.Component {
   static defaultProps = {
     closeOnOutclick: true,
     component: 'div',
+    hasTransition: false,
     openTransitionTime: 250,
     closeTransitionTime: 250,
-    transitionDelay: 10
+    transitionDelay: 15
   }
 
   constructor(props) {
@@ -25,7 +26,8 @@ class Dropdown extends React.Component {
     }
 
     this.toggle = this.toggle.bind(this);
-    this.onDropdownButtonClick = this.onDropdownButtonClick.bind(this);
+    this.open = this.open.bind(this)
+    this.close = this.close.bind(this)
     this.handleDocumentClick = this.handleDocumentClick.bind(this)
   }
 
@@ -63,37 +65,46 @@ class Dropdown extends React.Component {
   }
 
   open() {
+    const { hasTransition } = this.props
+
     if (!this.state.isOpen) {
       this.setState({
-        isInTransition: true
+        isOpen: !hasTransition,
+        isInTransition: hasTransition
       })
 
-      if (this.transitionTimeout)
-        clearTimeout(this.transitionTimeout)
+      if (hasTransition) {
+        if (this.transitionTimeout)
+          clearTimeout(this.transitionTimeout)
 
-      if (this.delayTimeout)
-        clearTimeout(this.delayTimeout)
+        if (this.delayTimeout)
+          clearTimeout(this.delayTimeout)
 
-      this.transitionTimeout = setTimeout(
-        () => this.setState({ isInTransition: false }), this.props.openTransitionTime
-      )
-      this.delayTimeout = setTimeout(() => this.setState({ isOpen: true }), this.props.transitionDelay)
+        this.transitionTimeout = setTimeout(
+          () => this.setState({ isInTransition: false }), this.props.openTransitionTime
+        )
+        this.delayTimeout = setTimeout(() => this.setState({ isOpen: true }), this.props.transitionDelay)
+      }
     }
   }
 
   close() {
+    const { hasTransition } = this.props
+
     if (this.state.isOpen) {
       this.setState({
         isOpen: false,
-        isInTransition: true
+        isInTransition: hasTransition
       })
 
-      if (this.transitionTimeout)
-        clearTimeout(this.transitionTimeout)
+      if (hasTransition) {
+        if (this.transitionTimeout)
+          clearTimeout(this.transitionTimeout)
 
-      this.transitionTimeout = setTimeout(
-        () => this.setState({ isInTransition: false }), this.props.closeTransitionTime
-      )
+        this.transitionTimeout = setTimeout(
+          () => this.setState({ isInTransition: false }), this.props.closeTransitionTime
+        )
+      }
     }
   }
 
@@ -110,11 +121,6 @@ class Dropdown extends React.Component {
     )
   }
 
-  onDropdownButtonClick(e) {
-    e.preventDefault();
-    this.toggle();
-  }
-
   render() {
     const { children, component:Component } = this.props
     return (
@@ -125,7 +131,7 @@ class Dropdown extends React.Component {
           React.Children.map(children, (child) => {
             if (child.type === DropdownButton) {
               return React.cloneElement(child, {
-                onClick: this.onDropdownButtonClick
+                onClick: e => e.preventDefault() | this.toggle()
               })
             }
             return child
