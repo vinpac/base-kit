@@ -1,23 +1,28 @@
+.btn-text,
 .btn {
-  display: inline-block;
-  font-weight: $btn-font-weight;
-  line-height: $btn-line-height;
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
+  display: inline-block;
+  font-weight: $btn-font-weight;
+  line-height: $btn-line-height;
   cursor: pointer;
   user-select: none;
+  outline: none !important;
+  color: $text-color-base;
+}
+
+.btn {
   border: 1px solid;
   padding: $btn-padding-y $btn-padding-x;
   font-size: $font-size-base;
   border-radius: $btn-border-radius;
-  outline: none !important;
   background: #fff;
   border-color: $input-border-color;
-  color: $text-color-base;
 }
 
-a.btn {
+a.btn,
+a.btn-text {
   &:hover, &:focus {
     text-decoration: none;
   }
@@ -34,3 +39,4 @@ a.btn {
   padding: $btn-circle-size / 4.5;
   border-radius: 50%;
 }
+

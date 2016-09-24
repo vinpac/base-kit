@@ -14,9 +14,13 @@
 
 // Responsive alignment
 
-.text-left   { text-align: left !important; }
-.text-right  { text-align: right !important; }
-.text-center { text-align: center !important; }
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    .text-#{$breakpoint}-left   { text-align: left !important; }
+    .text-#{$breakpoint}-right  { text-align: right !important; }
+    .text-#{$breakpoint}-center { text-align: center !important; }
+  }
+}
 
 // Transformation
 
@@ -32,7 +36,11 @@
 
 @include text-emphasis-variant('.text-primary', $color-primary);
 
+@include text-emphasis-variant('.text-accent', $color-accent);
+
 @include text-emphasis-variant('.text-success', $color-success);
 
 @include text-emphasis-variant('.text-warning', $color-warning);
+
+.text-light { color: #FFF !important; }
 

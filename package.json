@@ -3,13 +3,14 @@
   "version": "0.0.1",
   "private": true,
   "devDependencies": {
-    "react-scripts": "^0.4.1",
-    "node-sass": "^3.9.3"
+    "node-sass": "^3.9.3",
+    "react-scripts": "^0.5.1"
   },
   "dependencies": {
     "classnames": "^2.2.5",
-    "react": "^15.3.1",
-    "react-dom": "^15.3.1",
+    "create-react-app": "^0.5.0",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
     "react-redux": "^4.4.5",
     "react-router": "^2.8.0",
     "redux": "^3.6.0",

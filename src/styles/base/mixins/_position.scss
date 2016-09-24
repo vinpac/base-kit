@@ -11,6 +11,16 @@
   @include absolute-center();
 }
 
-.pull-right {
-  float: right;
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    .pull-#{$breakpoint}-left {
+      float: left;
+    }
+    .pull-#{$breakpoint}-right {
+      float: right;
+    }
+    .pull-#{$breakpoint}-none {
+      float: none !important;
+    }
+  }
 }

@@ -1,12 +1,12 @@
-@mixin button-variant($color, $text-color: #FFF, $text-active-color: $text-color) {
+@mixin button-variant($color, $text-color: #FFF, $lighten: $btn-lighten, $text-active-color: $text-color) {
   background: $color;
   color: $text-color;
   border-color: $color;
 
   &:hover,
   &.focus {
-    border-color: lighten($color, 4%);
-    background: lighten($color, 4%);
+    border-color: color-variant($color, 4%, $lighten);
+    background: color-variant($color, 4%, $lighten);
   }
 
   &:hover,
@@ -17,33 +17,46 @@
   &:active,
   &.active {
     color: $text-active-color;
-    border-color: lighten($color, 8%);
-    background: lighten($color, 8%);
+    border-color: color-variant($color, 8%, $lighten);
+    background: color-variant($color, 8%, $lighten);
   }
 }
 
-@mixin button-outline-variant($color, $fill:false, $fill-text-color: #FFF) {
+@mixin button-outline-variant($color, $border-color: $color, $fill: $btn-outline-fill, $fill-text-color: #FFF) {
   background: none;
-  border: 1px solid $color;
+  border: 1px solid $border-color;
   color: $color;
 
   @if $fill {
-
     &:hover {
       background: $color;
       color: $fill-text-color;
     }
-
   } @else {
     &:hover,
-    &:focus {
-      color: lighten($color, 8%);
-      border-color: lighten($color, 8%);
+    &:active {
+      border-color: color-variant($border-color, 8%);
     }
 
-    &:active,
-    &.active {
-      border-color: lighten($color, 30%);
+    &:active {
+      color: darken($color, 8%);
     }
+  }
+}
+
+@mixin button-text($color, $color-active: $color) {
+  background: none;
+  color: $color;
+
+  // Remove border from .btn
+  border-color: transparent;
+
+  &:hover,
+  &:focus {
+    color: darken($color-active, 8%);
+  }
+
+  &:active {
+    color: darken($color-active, 12%);
   }
 }

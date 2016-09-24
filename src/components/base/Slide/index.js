@@ -112,3 +112,4 @@ class Slide extends React.Component {
 
 
 export default Slide
+export { SlideBody, SlideNextButton, SlidePreviousButton }

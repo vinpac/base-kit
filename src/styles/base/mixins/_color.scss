@@ -1,0 +1,10 @@
+@function color-variant($color, $percentage, $lighten: true) {
+  @if $color == transparent or $color == null {
+    @return transparent;
+  }
+  @if $lighten {
+    @return lighten($color, $percentage);
+  } @else {
+    @return darken($color, $percentage);
+  }
+}

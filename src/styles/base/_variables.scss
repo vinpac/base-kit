@@ -8,7 +8,7 @@ $enable-flex: true;
 $color-primary: #007ee5 !default;
 $color-primary-dark: #026DC5 !default;
 $color-accent: #6772E5 !default;
-$color-success: #60BB4D;
+$color-success: #60BB4D !default;
 $color-warning: #D32F2F !default;
 
 // Variables
@@ -55,12 +55,13 @@ $grid-columns: 12 !default;
 $grid-gutter-width: 30px !default;
 
 // Buttons
-$btn-padding-y: .6rem !default;
+$btn-padding-y: .62rem !default;
 $btn-padding-x: 1rem !default;
-$btn-line-height: 1.25 !default;
+$btn-line-height: 1.2 !default;
 $btn-font-weight: 500 !default;
 $btn-border-radius: 3px !default;
-
+$btn-outline-fill: false;
+$btn-lighten: false;
 $btn-circle-size: 2.375rem;
 
 // Forms
@@ -119,9 +120,9 @@ $link-decoration: none !default;
 $link-hover-color: $link-color !default;
 $link-hover-decoration: underline !default;
 
-// Utilities
-$util-margin-horizontal: 1.25rem !default;
-$util-margin-vertical: 2rem !default;
+// Margin
+$margin-horizontal: .5rem 1rem 1.25rem !default;
+$margin-vertical: 1rem 2rem 2.5rem !default;
 
 // Text
 $text-muted: #999 !default;

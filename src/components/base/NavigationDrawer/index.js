@@ -2,6 +2,9 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import cx from 'classnames'
 
+import NavigationDrawerMenu from './NavigationDrawerMenu'
+import NavigationDrawerButton from './NavigationDrawerButton'
+
 class NavigationDrawer extends React.Component {
 
   static defaultProps = {
@@ -102,3 +105,4 @@ class NavigationDrawer extends React.Component {
 }
 
 export default NavigationDrawer
+export { NavigationDrawerMenu, NavigationDrawerButton }

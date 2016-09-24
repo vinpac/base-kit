@@ -11,7 +11,7 @@
 }
 
 .btn-outline-accent {
-  @include button-outline-variant($color-accent);
+  @include button-outline-variant($color-accent, transparent);
 }
 
 .btn-default {
@@ -19,16 +19,17 @@
 }
 
 .btn-outline-default {
-  @include button-outline-variant($btn-default-bg, true);
+  @include button-outline-variant($btn-default-bg, $btn-default-bg, true);
 }
 
 .btn-success {
   @include button-variant($color-success);
 }
 
-.btn-outline-accent {
-  @include button-outline-variant($color-accent);
+.btn-link {
+  @include button-text($link-color);
 }
+
 
 .btn-sm {
   padding: ($btn-padding-y * .9) ($btn-padding-x * .9);
@@ -45,4 +46,11 @@
 .btn-lg {
   padding: ($btn-padding-y * 1.5) ($btn-padding-x * 1.5);
   font-size: 1.25rem;
+}
+
+
+// Text
+
+.btn-accent-text {
+  @include button-text($color-accent);
 }

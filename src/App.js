@@ -1,17 +1,16 @@
 import React, { Component } from 'react'
-import Modal from '../base/Modal'
-import Preloader from '../elements/Preloader'
-import Dropdown from '../base/Dropdown'
-import DropdownButton from '../base/Dropdown/DropdownButton'
-import DropdownMenu from '../base/Dropdown/DropdownMenu'
-import NavigationDrawer from '../base/NavigationDrawer'
-import NavigationDrawerMenu from '../base/NavigationDrawer/NavigationDrawerMenu'
-import NavigationDrawerButton from '../base/NavigationDrawer/NavigationDrawerButton'
-import Slide from '../base/Slide'
 import cx from 'classnames'
-import SlideBody from '../base/Slide/SlideBody'
-import SlideNextButton from '../base/Slide/SlideNextButton'
-import SlidePreviousButton from '../base/Slide/SlidePreviousButton'
+
+// Base Components
+import Modal from './components/base/Modal'
+import Dropdown, { DropdownMenu, DropdownButton } from './components/base/Dropdown'
+import NavigationDrawer, { NavigationDrawerMenu, NavigationDrawerButton} from './components/base/NavigationDrawer'
+import Slide, { SlideBody, SlideNextButton, SlidePreviousButton } from './components/base/Slide'
+
+
+// Elements
+import Preloader from './components/elements/Preloader'
+import Footer from './components/elements/Footer'
 
 export default class App extends Component {
   render() {
@@ -21,11 +20,11 @@ export default class App extends Component {
           <div className="modal-content">
             <div className="modal-card">
               <div className="modal-post-header">
-                <button className="btn btn-transparent text-semibold text-sm">vini175pa <i className="fa fa-angle-down margin-left-sm" /></button>
+                <button className="btn btn-transparent text-semibold text-sm">vini175pa <i className="fa fa-angle-down mg-left-sm" /></button>
                 <button className="btn btn-transparent text-muted right"><i className="fa fa-cog" /></button>
               </div>
               <img src="https://67.media.tumblr.com/2af43f6ba6e3da9390722394e68c16cc/tumblr_oc5czpi6i51qz7t0xo1_540.jpg" className="fill-width" alt=""/>
-              <div className="modal-body margin-top">
+              <div className="modal-body mg-top">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error veniam, incidunt veritatis quia eaque nostrum dolor adipisci illo quibusdam placeat alias cupiditate debitis sint aut aperiam, expedita consequatur quasi deserunt.</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error veniam, incidunt veritatis quia eaque nostrum dolor adipisci illo quibusdam placeat alias cupiditate debitis sint aut aperiam, expedita consequatur quasi deserunt.</p>
               </div>
@@ -38,7 +37,7 @@ export default class App extends Component {
         </Modal>
         <header className="header">
           <div className="container">
-            <header className="navbar-default navbar">
+            <header className="navbar-light navbar">
               <NavigationDrawer right ref="a" open>
                 <a href="" className="navbar-brand">Starter kit</a>
                 <ul className="nav navbar-nav navbar-right hidden-md-up">
@@ -83,7 +82,7 @@ export default class App extends Component {
                   <ul className="nav navbar-nav collapse">
                     <li><a className="nav-link active" href="">Features</a></li>
                     <li><a className="nav-link" href="">Pricing</a></li>
-                    <Dropdown component="li">
+                    <Dropdown component="li" className="dropdown-animation">
                       <DropdownButton
                         component="a"
                         className="nav-link dropdown-button"
@@ -114,23 +113,24 @@ export default class App extends Component {
                 </NavigationDrawerMenu>
               </NavigationDrawer>
             </header>
-            <div className="container-md text-center">
+            <div className="container-md text-xs-center">
 
-              <h2 className="margin-top-lg text-weight-light">Just Random Text</h2>
-              <p className="text-md text-muted">Stripe is the best way to accept payments online and in mobile apps. We handle billions of dollars every year for forward-thinking businesses around the world.</p>
-              <button className="btn btn-accent text-uppercase">Create stripe account</button>
+              <h2 className="mg-xs-top-3 text-light text-weight-light">Just Random Text</h2>
+              <p className="text-md text-muted text-light">Stripe is the best way to accept payments online and in mobile apps. We handle billions of dollars every year for forward-thinking businesses around the world.</p>
+              <button className="btn btn-success btn-shadow text-uppercase mg-xs-right-2">Create stripe account</button>
+              <button className="btn btn-accent-text text-uppercase btn-shadow bg-light">Create Account</button>
             </div>
           </div>
         </header>
         <div className="container section-padding">
-          <h1 className="text-weight-light margin-bottom-lg">Forms</h1>
+          <h1 className="text-weight-light mg-xs-bottom-2">Forms</h1>
           <div className="row">
             <div className="col-md-4">
-              <h4 className="text-weight-light text-muted margin-bottom-md">Normal input</h4>
+              <h4 className="text-weight-light text-muted mg-xs-bottom-2">Normal input</h4>
               <input type="text" className="input" placeholder=".input"/>
             </div>
             <div className="col-md-4">
-              <h4 className="text-weight-light text-muted margin-bottom-md">Input group</h4>
+              <h4 className="text-weight-light text-muted mg-xs-bottom-2">Input group</h4>
               <div className="form-group">
                 <div className="input-group">
                   <span className="input-group-addon">
@@ -145,7 +145,7 @@ export default class App extends Component {
               </div>
             </div>
             <div className="col-md-4">
-              <h4 className="text-weight-light text-muted margin-bottom-md">Input group</h4>
+              <h4 className="text-weight-light text-muted mg-xs-bottom-2">Input group</h4>
               <div className="input-group input-group-2">
                 <input type="text" className="input" placeholder="you@domain.com"/>
                 <div className="input-group-btn">
@@ -157,28 +157,28 @@ export default class App extends Component {
           </div>
           <div className="row">
             <div className="col-md-4">
-              <h4 className="text-weight-light text-muted margin-bottom-md">Checkbox and Radio</h4>
+              <h4 className="text-weight-light text-muted mg-xs-bottom-2">Checkbox and Radio</h4>
               <label>
-                <input type="checkbox" className="input margin-right-md"/>
+                <input type="checkbox" className="input mg-xs-right-2"/>
                 <span>Teste</span>
               </label>
-              <label className="margin-left">
-                <input type="checkbox" className="input margin-right-md"/>
+              <label className="mg-xs-left-2">
+                <input type="checkbox" className="input mg-xs-right-2"/>
                 <span>Teste</span>
               </label>
-              <div className="margin-top-sm">
-                <label className="margin-right">
-                  <input name="teste" type="radio" className="input margin-right-md"/>
+              <div className="mg-xs-top-1">
+                <label className="mg-xs-right-2">
+                  <input name="teste" type="radio" className="input mg-xs-right-2"/>
                   <span>Teste</span>
                 </label>
-                <label className="margin-right">
-                  <input name="teste" type="radio" className="input margin-right-md"/>
+                <label className="mg-xs-right-2">
+                  <input name="teste" type="radio" className="input mg-xs-right-2"/>
                   <span>Teste</span>
                 </label>
               </div>
             </div>
           </div>
-          <h1 className="text-weight-light margin-top-lg margin-bottom-lg">Slide</h1>
+          <h1 className="text-weight-light mg-xs-top-3 mg-xs-bottom-2">Slide</h1>
           <div className="row">
             <div className="col-md-12">
               <Slide className="slide-absolute">
@@ -208,8 +208,8 @@ export default class App extends Component {
               </Slide>
             </div>
           </div>
-          <h1 className="text-weight-light margin-top-lg margin-bottom-lg">Cards</h1>
-          <div className="row margin-bottom-lg">
+          <h1 className="text-weight-light mg-xs-top-3 mg-xs-bottom-2">Cards</h1>
+          <div className="row mg-xs-bottom-2">
             <div className="col-md-4">
               <div className="card">
                 <div className="card-header">
@@ -261,6 +261,23 @@ export default class App extends Component {
             </div>
           </div>
         </div>
+        <div className="container mg-xs-top-3 mg-xs-bottom-3 ">
+          <div className="row">
+            <div className="col-md-6">
+              <a href="" className="card card-shadow  link-muted">
+                <h4 className="text-success">See or pricing <i className="fa fa-arrow-right" /></h4>
+                <p>No setup fees, monthly fees, or hidden fees. With our predictable and transparent pricing, you’ll always know what you’ll pay.</p>
+              </a>
+            </div>
+            <div className="col-md-6">
+              <a href="" className="card card-shadow link-muted">
+                <h4 className="text-accent">Explore the docs  <i className="fa fa-arrow-right" /></h4>
+                <p>Start building your integration and accept your first payment in minutes. Stripe libraries are available in every language from Ruby to Go.</p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <Footer />
       </div>
     );
   }

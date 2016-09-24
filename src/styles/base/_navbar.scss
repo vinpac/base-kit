@@ -22,13 +22,8 @@
   list-style: none;
   padding: 0;
   margin: 0;
-
-  > a {
-    display: inline-block;
-  }
 }
 
-.nav-link,
 .nav-item {
   display: inline-block;
 }
@@ -51,9 +46,10 @@
 }
 
 .nav-vertical {
+  .nav-item,
   > li {
     display: block;
-    margin-bottom: .7rem;
+    margin-bottom: .5rem;
   }
 }
 

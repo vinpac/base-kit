@@ -1,20 +1,27 @@
 import React from 'react'
 import cx from 'classnames'
 import ReactDOM from 'react-dom'
+import DropdownMenu from './DropdownMenu'
 import DropdownButton from './DropdownButton'
 
-export default class Dropdown extends React.Component {
+class Dropdown extends React.Component {
 
   static defaultProps = {
     closeOnOutclick: true,
-    component: 'div'
+    component: 'div',
+    openTransitionTime: 250,
+    closeTransitionTime: 250,
+    transitionDelay: 10
   }
 
   constructor(props) {
     super(props);
 
+    this.transitionTimeout = null;
+    this.delayTimeout = null;
     this.state = {
-      isOpen: !!this.props.open
+      isOpen: !!this.props.open,
+      isInTransition: !!this.props.open
     }
 
     this.toggle = this.toggle.bind(this);
@@ -33,11 +40,11 @@ export default class Dropdown extends React.Component {
   }
 
   handleDocumentClick(e) {
-    if (e && e.target) {
+    if (this.state.isOpen && e && e.target) {
       try{
         const node = ReactDOM.findDOMNode(this)
         if (!node.contains(e.target)) {
-          this.hide()
+          this.close()
         }
       } catch(err){
         console.error(err)
@@ -48,24 +55,56 @@ export default class Dropdown extends React.Component {
   }
 
   toggle(e) {
-    this.setState({
-      isOpen: !this.state.isOpen
-    })
+    if (this.state.isOpen) {
+      this.close()
+    } else {
+      this.open()
+    }
   }
 
-  hide() {
-    this.setState({
-      isOpen: false
-    })
+  open() {
+    if (!this.state.isOpen) {
+      this.setState({
+        isInTransition: true
+      })
+
+      if (this.transitionTimeout)
+        clearTimeout(this.transitionTimeout)
+
+      if (this.delayTimeout)
+        clearTimeout(this.delayTimeout)
+
+      this.transitionTimeout = setTimeout(
+        () => this.setState({ isInTransition: false }), this.props.openTransitionTime
+      )
+      this.delayTimeout = setTimeout(() => this.setState({ isOpen: true }), this.props.transitionDelay)
+    }
+  }
+
+  close() {
+    if (this.state.isOpen) {
+      this.setState({
+        isOpen: false,
+        isInTransition: true
+      })
+
+      if (this.transitionTimeout)
+        clearTimeout(this.transitionTimeout)
+
+      this.transitionTimeout = setTimeout(
+        () => this.setState({ isInTransition: false }), this.props.closeTransitionTime
+      )
+    }
   }
 
   get className() {
     const { className } = this.props
-    const { isOpen } = this.state
+    const { isOpen, isInTransition } = this.state
     return cx(
       'dropdown',
       {
-        'open': isOpen
+        'open': isOpen,
+        'in-transition': isInTransition
       },
       className
     )
@@ -96,3 +135,6 @@ export default class Dropdown extends React.Component {
     );
   }
 }
+
+export default Dropdown
+export { DropdownButton, DropdownMenu }

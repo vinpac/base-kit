@@ -1,0 +1,9 @@
+@mixin link-variant($color, $color-active: darken($color, 12%)) {
+  color: $color;
+
+  &:hover,
+  &:focus {
+    color: $color-active;
+    text-decoration: none;
+  }
+}

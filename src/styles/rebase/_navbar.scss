@@ -1,1 +1,2 @@
 .navbar-default { @include make-navbar(null, $text-color-base); }
+.navbar-light { @include make-navbar(null, #fff); }
