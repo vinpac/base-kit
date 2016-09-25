@@ -2,6 +2,7 @@
   "name": "starter-kit",
   "version": "0.0.1",
   "private": true,
+  "homepage": "http://vinpac.github.io/base-kit",
   "devDependencies": {
     "node-sass": "^3.9.3",
     "react-scripts": "^0.5.1"
@@ -19,7 +20,7 @@
   },
   "scripts": {
     "start": "npm run scss && react-scripts start",
-    "build": "npm run scss:watch && react-scripts build",
+    "build": "npm run scss && react-scripts build",
     "eject": "react-scripts eject",
     "scss": "node-sass ./src/styles/app.scss -o ./src/dist/css",
     "scss:watch": "npm run scss && node-sass ./src/styles/app.scss -w -o ./src/dist/css"
