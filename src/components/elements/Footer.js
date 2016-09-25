@@ -1,4 +1,5 @@
-import React from 'react';
+import React from 'react'
+import Link from 'react-router/Link'
 
 const Footer = () => {
   return (
@@ -8,52 +9,43 @@ const Footer = () => {
           <div className="row">
             <div className="col-lg mg-md-bottom-1 col-fill">
               <div className="pull-xs-left pull-lg-none mg-lg-bottom-1">
-                <a  href="" className="text-weight-semibold text-accent">
+                <a  target="_blank" href="//github.com/vinpac/base-kit/issues" className="text-weight-semibold text-accent">
                   <i className="fa fa-location-arrow mg-xs-right-2" />
-                  United States
+                  Issues
                 </a>
               </div>
               <div className="pull-xs-left pull-lg-none mg-xs-left-3 mg-lg-left-none">
-                <a href="" className="text-weight-semibold text-accent">
-                  <i className="fa fa-comment mg-xs-right-2" />
-                  English
+                <a target="_blank" href="//github.com/vinpac/base-kit" className="text-weight-semibold text-accent">
+                  <i className="fa fa-github mg-xs-right-2" />
+                  Github
                 </a>
               </div>
             </div>
             <div className="col-md mg-xs-top-2 mg-lg-top-none">
-              <h4 className="footer-section-title">Payments</h4>
+              <h4 className="footer-section-title">Guides</h4>
               <ul className="nav nav-vertical">
-                <li><a href="">Payments</a></li>
-                <li><a href="">Subscriptions</a></li>
-                <li><a href="">Connect</a></li>
-                <li><a href="">Relay</a></li>
-                <li><a href="">Atlas</a></li>
+                <li><a target="_blank" href="//vinpac.github.io/base-kit/">Example of use</a></li>
+                <li><a target="_blank" href="//github.com/airbnb/javascript">Javascript</a></li>
               </ul>
             </div>
             <div className="col-md mg-xs-top-2 mg-lg-top-none">
               <h4 className="footer-section-title">Developers</h4>
               <ul className="nav nav-vertical">
-                <li><a href="">Documentation</a></li>
-                <li><a href="">API reference</a></li>
-                <li><a href="">API status</a></li>
-                <li><a href="">Open source</a></li>
+                <li><a target="_blank" href="//github.com/vinpac">@vinpac</a></li>
               </ul>
             </div>
             <div className="col-md mg-xs-top-2 mg-lg-top-none">
-              <h4 className="footer-section-title">Company</h4>
+              <h4 className="footer-section-title">Cool Stuff</h4>
               <ul className="nav nav-vertical">
-                <li><a href="">About</a></li>
-                <li><a href="">Blog</a></li>
-                <li><a href="">Jobs</a></li>
-                <li><a href="">Press</a></li>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/about">About</Link></li>
               </ul>
             </div>
             <div className="col-md mg-xs-top-2 mg-lg-top-none">
               <h4 className="footer-section-title">Resources</h4>
               <ul className="nav nav-vertical">
-                <li><a href="">Support</a></li>
-                <li><a href="">Contact</a></li>
-                <li><a href="">Privacy & Terms</a></li>
+                <li><a target="_blank" href="//github.com/twbs/bootstrap">Bootstrap</a></li>
+                <li><a target="_blank" href="//github.com/facebookincubator/create-react-app">Create React App</a></li>
               </ul>
             </div>
           </div>
