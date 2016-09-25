@@ -42,5 +42,5 @@
 
 @include text-emphasis-variant('.text-warning', $color-warning);
 
-.text-light { color: #FFF !important; }
+@include text-emphasis-variant('.text-light', #FFF);
 

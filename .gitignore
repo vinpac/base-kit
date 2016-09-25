@@ -11,3 +11,4 @@ build
 npm-debug.log
 
 src/dist
+.simple-import-helper.json
