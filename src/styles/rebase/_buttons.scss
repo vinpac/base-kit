@@ -51,10 +51,14 @@
 
 // Text
 
-.btn-default-text {
+.btn-text {
   @include button-text($text-color-base);
 }
 
-.btn-accent-text {
+.btn-text-muted {
+  @include button-text($text-muted-dark);
+}
+
+.btn-text-accent {
   @include button-text($color-accent);
 }

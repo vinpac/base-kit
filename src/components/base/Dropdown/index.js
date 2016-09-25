@@ -18,11 +18,9 @@ class Dropdown extends React.Component {
   constructor(props) {
     super(props);
 
-    this.transitionTimeout = null;
-    this.delayTimeout = null;
     this.state = {
       isOpen: !!this.props.open,
-      isInTransition: !!this.props.open
+      inTransition: !!this.props.open
     }
 
     this.toggle = this.toggle.bind(this);
@@ -65,12 +63,12 @@ class Dropdown extends React.Component {
   }
 
   open() {
-    const { hasTransition } = this.props
+    const { hasTransition, openTransitionTime, transitionDelay } = this.props
 
     if (!this.state.isOpen) {
       this.setState({
         isOpen: !hasTransition,
-        isInTransition: hasTransition
+        inTransition: hasTransition
       })
 
       if (hasTransition) {
@@ -81,9 +79,9 @@ class Dropdown extends React.Component {
           clearTimeout(this.delayTimeout)
 
         this.transitionTimeout = setTimeout(
-          () => this.setState({ isInTransition: false }), this.props.openTransitionTime
+          () => this.setState({ inTransition: false }), openTransitionTime
         )
-        this.delayTimeout = setTimeout(() => this.setState({ isOpen: true }), this.props.transitionDelay)
+        this.delayTimeout = setTimeout(() => this.setState({ isOpen: true }), transitionDelay )
       }
     }
   }
@@ -94,7 +92,7 @@ class Dropdown extends React.Component {
     if (this.state.isOpen) {
       this.setState({
         isOpen: false,
-        isInTransition: hasTransition
+        inTransition: hasTransition
       })
 
       if (hasTransition) {
@@ -102,7 +100,7 @@ class Dropdown extends React.Component {
           clearTimeout(this.transitionTimeout)
 
         this.transitionTimeout = setTimeout(
-          () => this.setState({ isInTransition: false }), this.props.closeTransitionTime
+          () => this.setState({ inTransition: false }), this.props.closeTransitionTime
         )
       }
     }
@@ -110,12 +108,13 @@ class Dropdown extends React.Component {
 
   get className() {
     const { className } = this.props
-    const { isOpen, isInTransition } = this.state
+    const { isOpen, inTransition } = this.state
     return cx(
       'dropdown',
       {
         'open': isOpen,
-        'in-transition': isInTransition
+        'closed': !isOpen && inTransition,
+        'in-transition': inTransition
       },
       className
     )

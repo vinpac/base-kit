@@ -12,13 +12,16 @@ const Demonstration = () => {
           <div className="col-md-4">
             <h4 className="text-weight-light text-muted mg-xs-bottom-2">Normal input</h4>
             <input type="text" className="input" placeholder=".input"/>
+            <input type="password" className="input mg-xs-top-1" placeholder="Password"/>
+            <button className="btn btn-outline-accent mg-xs-top-1 fill-width mg-xs-bottom-2">Entrar</button>
+
           </div>
           <div className="col-md-4">
             <h4 className="text-weight-light text-muted mg-xs-bottom-2">Input group</h4>
             <div className="form-group">
               <div className="input-group">
                 <span className="input-group-addon">
-                  { window.location.host }/
+                  @
                 </span>
                 <input type="text" className="input" placeholder="Search for..." />
                 <span className="input-group-btn">
@@ -28,18 +31,6 @@ const Demonstration = () => {
               <span className="input-subtext">Email invalido</span>
             </div>
           </div>
-          <div className="col-md-4">
-            <h4 className="text-weight-light text-muted mg-xs-bottom-2">Input group</h4>
-            <div className="input-group input-group-2">
-              <input type="text" className="input" placeholder="you@domain.com"/>
-              <div className="input-group-btn">
-                <button className="btn text-uppercase">Notify me</button>
-              </div>
-            </div>
-
-          </div>
-        </div>
-        <div className="row">
           <div className="col-md-4">
             <h4 className="text-weight-light text-muted mg-xs-bottom-2">Checkbox and Radio</h4>
             <label>
@@ -93,7 +84,7 @@ const Demonstration = () => {
 
         { /* == Card ==*/ }
         <div>
-          <h1 className="text-weight-light mg-xs-top-3 mg-xs-bottom-2">Cards</h1>
+          <h1 className="text-weight-light mg-xs-top-3 mg-xs-bottom-2 text-accent">Cards</h1>
           <div className="row mg-xs-bottom-2">
             <div className="col-md-4">
               <div className="card">
@@ -153,7 +144,7 @@ const Demonstration = () => {
         <h1 className="text-weight-light mg-xs-top-3 mg-xs-bottom-2 text-accent">Table</h1>
         <div className="row">
           <div className="col-xs-12">
-            <table className="table">
+            <table className="table table-radius">
               <thead className="tr-accent">
                 <tr>
                   <th>Produto</th>

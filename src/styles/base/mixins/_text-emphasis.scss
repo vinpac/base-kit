@@ -1,10 +1,10 @@
 // Typography
 
-@mixin link-variant($color) {
+@mixin link-variant($color, $color-active: darken($color, 12%)) {
   color: $color;
 
   @include hover-focus {
-    color: darken($color, 12%) !important;
+    color: $color-active !important;
     text-decoration: none;
   }
 }

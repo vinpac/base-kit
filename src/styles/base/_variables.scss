@@ -55,8 +55,8 @@ $grid-columns: 12 !default;
 $grid-gutter-width: 30px !default;
 
 // Buttons
-$btn-padding-y: .62rem !default;
 $btn-padding-x: 1rem !default;
+$btn-padding-y: .6rem !default;
 $btn-line-height: 1.2 !default;
 $btn-font-weight: 500 !default;
 $btn-border-radius: 3px !default;
@@ -75,7 +75,12 @@ $input-border-color-highlight: $color-primary !default;
 $input-color: $text-color-base !default;
 $input-color-placeholder: rgba(#000,.35) !default;
 $input-border-radius: 4px !default;
-$input-checkbox-size: 20px;
+$input-active-box-shadow: none !default;
+
+
+$input-checkbox-size: 20px !default;
+$input-checkbox-color: rgba(207,215,223,.75) !default;
+$input-checkbox-border-width: 2px !default;
 $input-checkbox-checked-bg: $color-accent !default;
 $input-checkbox-icon: url('../../images/icon-check.svg') !default;
 
@@ -86,6 +91,7 @@ $input-btn-border-width: $input-border-width  !default;
 $input-group-addon-border-color: $input-border-color !default;
 
 // Dropdown
+$dropdown-bg: #FFF;
 $dropdown-item-padding-x: 1.4rem;
 $dropdown-item-padding-y: .38rem;
 $dropdown-border-radius: 4px;

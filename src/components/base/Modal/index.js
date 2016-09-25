@@ -10,7 +10,10 @@ class Modal extends React.Component {
     containerNode: document.body,
     closeOnOutclick: true,
     fillScrollSpace: true,
-    transitionTime: 100
+    hasTransition: true,
+    openTransitionTime: 250,
+    closeTransitionTime: 250,
+    transitionDelay: 15
   }
 
   constructor(props) {
@@ -22,6 +25,10 @@ class Modal extends React.Component {
     }
 
     this.toggle = this.toggle.bind(this);
+    this.open = this.open.bind(this);
+    this.close = this.close.bind(this);
+    this.onBackdropClick = this.onBackdropClick.bind(this);
+    this.fillContainerScrollbar = this.fillContainerScrollbar.bind(this)
   }
 
   componentDidMount() {
@@ -29,51 +36,105 @@ class Modal extends React.Component {
       this.toggle()
   }
 
-  toggle(e) {
-    const { containerNode, fillScrollSpace } = this.props
-    let { isOpen } = this.state
-    isOpen = !isOpen
-
-    if (e && e.target) {
-      try {
-        const node = ReactDOM.findDOMNode(this.refs.modal)
-        if (node.contains(e.target) && node !== e.target)
-          return
-      } catch(e) {}
+  toggle() {
+    if (this.state.isOpen) {
+      this.close()
+    } else {
+      this.open()
     }
+  }
 
+  fillContainerScrollbar(forceState) {
+    let isOpen = forceState !== undefined ? forceState : this.state.isOpen
+    const { containerNode } = this.props
     const containerClassname = classNamesToObject(containerNode.className)
+
     containerNode.className = cx({
       ...containerClassname,
       'modal-open': isOpen
     })
 
-    if (fillScrollSpace) {
-      containerNode.style['paddingRight'] = isOpen
-        ? `${getScrollbarSize()}px`
-        : null
+    containerNode.style['paddingRight'] = isOpen
+      ? `${getScrollbarSize()}px`
+      : null
+  }
+
+  open() {
+    const { hasTransition, fillScrollSpace, openTransitionTime, transitionDelay } = this.props
+
+    if (!this.state.isOpen) {
+      this.setState({
+        isOpen: !hasTransition,
+        inTransition: hasTransition
+      })
+
+      if (fillScrollSpace) {
+        this.fillContainerScrollbar(true)
+      }
+
+      if (hasTransition) {
+        if (this.transitionTimeout)
+          clearTimeout(this.transitionTimeout)
+
+        if (this.delayTimeout)
+          clearTimeout(this.delayTimeout)
+
+        this.transitionTimeout = setTimeout(
+          () => this.setState({ inTransition: false }), openTransitionTime
+        )
+        this.delayTimeout = setTimeout(() => this.setState({ isOpen: true }), transitionDelay)
+      }
     }
+  }
 
-    this.setState({
-      isOpen: isOpen,
-      inTransition: !isOpen
-    })
+  close() {
+    const { hasTransition, fillScrollSpace } = this.props
 
-    if (!isOpen) {
-      setTimeout(() => this.setState({ inTransition: false }), this.props.transitionTime);
+    if (this.state.isOpen) {
+      this.setState({
+        isOpen: false,
+        inTransition: hasTransition
+      })
+
+      if (fillScrollSpace) {
+        this.fillContainerScrollbar(false)
+      }
+
+      if (hasTransition) {
+        if (this.transitionTimeout)
+          clearTimeout(this.transitionTimeout)
+
+        this.transitionTimeout = setTimeout(
+          () => this.setState({ inTransition: false }), this.props.closeTransitionTime
+        )
+      }
+    }
+  }
+
+  onBackdropClick(e) {
+    if (e && e.target && this.state.isOpen) {
+      try {
+        const node = ReactDOM.findDOMNode(this.refs.modal)
+
+        if (!node.contains(e.target) || node === e.target) {
+          this.close()
+        }
+      } catch(e) {}
     }
   }
 
   get className() {
     const { className, large, small } = this.props
     const { isOpen, inTransition } = this.state
+
     return cx(
       'modal',
       {
         'modal-lg': large,
         'modal-sm': small,
         'open': isOpen,
-        'closed': !isOpen && inTransition
+        'closed': !isOpen && inTransition,
+        'in-transition': inTransition
       },
       className
     )
@@ -82,7 +143,7 @@ class Modal extends React.Component {
   render() {
     const { children, closeOnOutclick } = this.props
     return (
-      <div ref="modal" className={ this.className } onClick={closeOnOutclick ? this.toggle : null}>
+      <div ref="modal" className={ this.className } onClick={closeOnOutclick ? this.onBackdropClick : null}>
         { children }
       </div>
     );

@@ -29,7 +29,7 @@
 
     > li > a {
       transition: all .15s ease;
-      @include link-variant(#8898aa);
+      @include link-variant(#8898aa, darken(#8898aa, 30%));
     }
   }
 
@@ -39,6 +39,14 @@
 
   .footer-cards {
     padding-top: 100px;
-    background: linear-gradient(to right bottom, #FFF 50%, #F6F9FC 50%);
+    background: linear-gradient(170deg, #FFF 50%, #F6F9FC 50%);
+
+    @include media-breakpoint-up(lg) {
+      background: linear-gradient(171deg, #FFF 50%, #F6F9FC 50%);
+    }
   }
+
+
+
+
 }
