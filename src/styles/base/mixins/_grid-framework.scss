@@ -22,12 +22,13 @@
       }
     }
 
-    .col-#{$breakpoint} {
-      @extend %grid-column;
+    @if $enable-flex {
+      .col-#{$breakpoint} {
+        @extend %grid-column;
+      }
     }
 
     @include media-breakpoint-up($breakpoint, $breakpoints) {
-
       @if $enable-flex {
         .col-#{$breakpoint} {
           width: auto !important;

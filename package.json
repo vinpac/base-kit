@@ -5,7 +5,7 @@
   "homepage": "http://vinpac.github.io/base-kit",
   "devDependencies": {
     "node-sass": "^3.9.3",
-    "react-scripts": "^0.5.1"
+    "react-scripts": "^0.6.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",

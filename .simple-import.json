@@ -1,0 +1,8 @@
+{
+  "javascript": {
+    "dictionary": {
+      "Link": "react-router/Link",
+      "Replace": "react-router/Replace"
+    }
+  }
+}
