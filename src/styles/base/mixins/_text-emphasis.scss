@@ -9,13 +9,29 @@
   }
 }
 
-@mixin text-emphasis-variant($parent, $color) {
+@mixin text-emphasis-variant($parent, $color, $color-active: darken($color, 12%)) {
   #{$parent} {
     color: $color;
   }
+
   a#{$parent} {
     @include hover-focus {
-      color: darken($color, 12%) !important;
+      color: $color-active !important;
+      text-decoration: none;
+    }
+  }
+}
+
+@mixin text-emphasis-variant-light($parent, $color, $color-unactive: rgba($color, .8)) {
+  #{$parent} {
+    color: $color;
+  }
+
+  a#{$parent} {
+    color: $color-unactive;
+
+    @include hover-focus {
+      color: $color !important;
       text-decoration: none;
     }
   }

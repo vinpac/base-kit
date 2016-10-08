@@ -5,3 +5,8 @@ export default {
   exactly: true,
   action: HomeView
 }
+
+export const tabs = {
+  pattern: '/t/:tab',
+  action: HomeView
+}

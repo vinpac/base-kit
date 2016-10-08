@@ -1,9 +1,10 @@
-import home from './home'
+import home, { tabs } from './home'
 import about from './about'
 
 const routes = [
   home,
-  about
+  about,
+  tabs
 ]
 
 export default routes

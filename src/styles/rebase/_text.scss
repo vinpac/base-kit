@@ -11,3 +11,5 @@
 .text-sm {
   font-size: .875em;
 }
+
+@include text-emphasis-variant-light('.text-light', #FFF);

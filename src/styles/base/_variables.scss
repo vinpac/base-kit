@@ -127,9 +127,12 @@ $link-decoration: none !default;
 $link-hover-color: $link-color !default;
 $link-hover-decoration: underline !default;
 
+// Tabs
+$tab-text-color: #9999A7;
+
 // Margin
-$margin-horizontal: .5rem .8rem 1.25rem !default;
-$margin-vertical: 1rem 2rem 2.5rem !default;
+$spacer-horizontal: .5rem .8rem 1.25rem !default;
+$spacer-vertical: 1rem 2rem 2.5rem !default;
 
 // Text
 $text-muted: #999 !default;
