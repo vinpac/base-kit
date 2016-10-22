@@ -1,5 +1,4 @@
 @import 'variables';
 @import 'base';
-@import 'rebase/rebase';
-@import 'partials/partials';
-@import 'elements/elements';
+@import 'partials/*';
+@import 'elements/*';

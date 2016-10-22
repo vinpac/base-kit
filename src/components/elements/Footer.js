@@ -42,9 +42,9 @@ const Footer = ({ className }) => {
               <h2 className="text-weight-light">Get in touch, or create an account.</h2>
             </div>
             <div className="col-md-6">
-              <div className="mg-lg-top-2 text-md-right mg-xs-top-2">
-                <button className="btn btn-accent text-uppercase btn-shadow mg-md-bottom-1 mg-lg-bottom-none">Create strip account</button>
-                <button className="btn btn-text-accent text-uppercase bg-light btn-shadow mg-xs-left-2">Contact Sales</button>
+              <div className="sp-lg-top-2 text-md-right sp-xs-top-2">
+                <button className="btn btn-accent text-uppercase btn-shadow sp-md-bottom-1 sp-lg-bottom-none">Create strip account</button>
+                <button className="btn btn-text-accent text-uppercase bg-light btn-shadow sp-xs-left-2">Contact Sales</button>
               </div>
             </div>
           </div>
@@ -52,21 +52,21 @@ const Footer = ({ className }) => {
         <hr className="hr-muted"/>
         <div className="container">
           <div className="row">
-            <div className="col-lg mg-md-bottom-1 col-fill">
-              <div className="pull-xs-left pull-lg-none mg-lg-bottom-1">
+            <div className="col-lg sp-md-bottom-1 col-fill">
+              <div className="pull-xs-left pull-lg-none sp-lg-bottom-1">
                 <a  href="" className="text-weight-semibold text-accent">
-                  <i className="fa fa-location-arrow mg-xs-right-2" />
+                  <i className="fa fa-location-arrow sp-xs-right-2" />
                   United States
                 </a>
               </div>
-              <div className="pull-xs-left pull-lg-none mg-xs-left-3 mg-lg-left-none">
+              <div className="pull-xs-left pull-lg-none sp-xs-left-3 sp-lg-left-none">
                 <a href="" className="text-weight-semibold text-accent">
-                  <i className="fa fa-comment mg-xs-right-2" />
+                  <i className="fa fa-comment sp-xs-right-2" />
                   English
                 </a>
               </div>
             </div>
-            <div className="col-md mg-xs-top-2 mg-lg-top-none">
+            <div className="col-md sp-xs-top-2 sp-lg-top-none">
               <h4 className="footer-section-title">Payments</h4>
               <ul className="nav nav-vertical">
                 <li><a href="">Payments</a></li>
@@ -76,7 +76,7 @@ const Footer = ({ className }) => {
                 <li><a href="">Atlas</a></li>
               </ul>
             </div>
-            <div className="col-md mg-xs-top-2 mg-lg-top-none">
+            <div className="col-md sp-xs-top-2 sp-lg-top-none">
               <h4 className="footer-section-title">Developers</h4>
               <ul className="nav nav-vertical">
                 <li><a href="">Documentation</a></li>
@@ -85,7 +85,7 @@ const Footer = ({ className }) => {
                 <li><a href="">Open source</a></li>
               </ul>
             </div>
-            <div className="col-md mg-xs-top-2 mg-lg-top-none">
+            <div className="col-md sp-xs-top-2 sp-lg-top-none">
               <h4 className="footer-section-title">Company</h4>
               <ul className="nav nav-vertical">
                 <li><a href="">About</a></li>
@@ -94,7 +94,7 @@ const Footer = ({ className }) => {
                 <li><a href="">Press</a></li>
               </ul>
             </div>
-            <div className="col-md mg-xs-top-2 mg-lg-top-none">
+            <div className="col-md sp-xs-top-2 sp-lg-top-none">
               <h4 className="footer-section-title">Resources</h4>
               <ul className="nav nav-vertical">
                 <li><a href="">Support</a></li>

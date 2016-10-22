@@ -7,17 +7,17 @@ const Demonstration = () => {
   return (
     <div className="">
       <div className="container section-padding">
-        <h1 className="text-weight-light mg-xs-bottom-2 text-accent">Forms</h1>
+        <h1 className="text-weight-light sp-xs-bottom-2 text-accent">Forms</h1>
         <div className="row">
           <div className="col-md-4">
-            <h4 className="text-weight-light text-muted mg-xs-bottom-2">Normal input</h4>
+            <h4 className="text-weight-light text-muted sp-xs-bottom-2">Normal input</h4>
             <input type="text" className="input" placeholder=".input"/>
-            <input type="password" className="input mg-xs-top-1" placeholder="Password"/>
-            <button className="btn btn-outline-accent mg-xs-top-1 fill-width mg-xs-bottom-2">Entrar</button>
+            <input type="password" className="input sp-xs-top-1" placeholder="Password"/>
+            <button className="btn btn-outline-accent sp-xs-top-1 fill-width sp-xs-bottom-2">Entrar</button>
 
           </div>
           <div className="col-md-4">
-            <h4 className="text-weight-light text-muted mg-xs-bottom-2">Input group</h4>
+            <h4 className="text-weight-light text-muted sp-xs-bottom-2">Input group</h4>
             <div className="form-group">
               <div className="input-group">
                 <span className="input-group-addon">
@@ -32,25 +32,25 @@ const Demonstration = () => {
             </div>
           </div>
           <div className="col-md-4">
-            <h4 className="text-weight-light text-muted mg-xs-bottom-2">Checkbox and Radio</h4>
+            <h4 className="text-weight-light text-muted sp-xs-bottom-2">Checkbox and Radio</h4>
             <label>
-              <input type="checkbox" className="input mg-xs-right-2"/>
+              <input type="checkbox" className="input sp-xs-right-2"/>
               <span>I agree with <a href="">Terms</a></span>
             </label>
-            <div className="mg-xs-top-1">
-              <label className="mg-xs-right-2">
-                <input name="teste" type="radio" className="input mg-xs-right-2"/>
+            <div className="sp-xs-top-1">
+              <label className="sp-xs-right-2">
+                <input name="teste" type="radio" className="input sp-xs-right-2"/>
                 <span>Male</span>
               </label>
-              <label className="mg-xs-right-2">
-                <input name="teste" type="radio" className="input mg-xs-right-2"/>
+              <label className="sp-xs-right-2">
+                <input name="teste" type="radio" className="input sp-xs-right-2"/>
                 <span>Female</span>
               </label>
             </div>
           </div>
         </div>
         <div className="d-none">
-          <h1 className="text-weight-light mg-xs-top-3 mg-xs-bottom-2 text-accent">Slide</h1>
+          <h1 className="text-weight-light sp-xs-top-3 sp-xs-bottom-2 text-accent">Slide</h1>
           <div className="row">
             <div className="col-md-12">
               <Slide className="slide-absolute">
@@ -84,8 +84,8 @@ const Demonstration = () => {
 
         { /* == Card ==*/ }
         <div>
-          <h1 className="text-weight-light mg-xs-top-3 mg-xs-bottom-2 text-accent">Cards</h1>
-          <div className="row mg-xs-bottom-2">
+          <h1 className="text-weight-light sp-xs-top-3 sp-xs-bottom-2 text-accent">Cards</h1>
+          <div className="row sp-xs-bottom-2">
             <div className="col-md-4">
               <div className="card">
                 <div className="card-header">
@@ -141,7 +141,7 @@ const Demonstration = () => {
         </div>
 
         { /* == Table == */}
-        <h1 className="text-weight-light mg-xs-top-3 mg-xs-bottom-2 text-accent">Table</h1>
+        <h1 className="text-weight-light sp-xs-top-3 sp-xs-bottom-2 text-accent">Table</h1>
         <div className="row">
           <div className="col-xs-12">
             <table className="table table-radius">
