@@ -11,9 +11,9 @@ const Demonstration = () => {
         <div className="row">
           <div className="col-md-4">
             <h4 className="text-weight-light text-muted sp-xs-bottom-2">Normal input</h4>
-            <input type="text" className="input" placeholder=".input"/>
+            <input type="text" className="input" placeholder="Email"/>
             <input type="password" className="input sp-xs-top-1" placeholder="Password"/>
-            <button className="btn btn-outline-accent sp-xs-top-1 fill-width sp-xs-bottom-2">Entrar</button>
+            <button className="btn btn-outline-accent sp-xs-top-1 fill-width sp-xs-bottom-2">Login</button>
 
           </div>
           <div className="col-md-4">
@@ -28,7 +28,7 @@ const Demonstration = () => {
                   <button className="btn btn-outline-accent" type="button">Continue</button>
                 </span>
               </div>
-              <span className="input-subtext">Email invalido</span>
+              <span className="input-subtext">Invalid email</span>
             </div>
           </div>
           <div className="col-md-4">
@@ -98,13 +98,13 @@ const Demonstration = () => {
                 </div>
                 <div className="list">
                   <div className="list-item">
-                    Teste
+                    Item
                   </div>
                   <a className="list-item list-item-action">
-                    Teste
+                    Item
                   </a>
                   <div className="list-item">
-                    Teste
+                    Item
                   </div>
                 </div>
               </div>
@@ -129,10 +129,10 @@ const Demonstration = () => {
                 </div>
                 <div className="list">
                   <div className="list-item">
-                    Teste
+                    Item
                   </div>
                   <div className="list-item">
-                    Teste
+                    Item
                   </div>
                 </div>
               </div>
@@ -147,29 +147,29 @@ const Demonstration = () => {
             <table className="table table-radius">
               <thead className="tr-accent">
                 <tr>
-                  <th>Produto</th>
-                  <th>Quantidade</th>
+                  <th>Product</th>
+                  <th>Quantity</th>
                   <th>Total</th>
                 </tr>
               </thead>
               <tbody>
                 <tr className="bg-grey">
-                  <td>Teste</td>
+                  <td>Item</td>
                   <td>1</td>
                   <td>R$480</td>
                 </tr>
                 <tr>
-                  <td>Teste</td>
+                  <td>Item</td>
                   <td>1</td>
                   <td>R$480</td>
                 </tr>
                 <tr className="bg-grey">
-                  <td>Teste</td>
+                  <td>Item</td>
                   <td>1</td>
                   <td>R$480</td>
                 </tr>
                 <tr>
-                  <td>Teste</td>
+                  <td>Item</td>
                   <td>1</td>
                   <td>R$480</td>
                 </tr>
@@ -189,7 +189,7 @@ const Demonstration = () => {
                   <td>R$480</td>
                 </tr>
                 <tr>
-                  <td colSpan="2"><span className="text-weight-semibold">Saldo</span></td>
+                  <td colSpan="2"><span className="text-weight-semibold">Balance</span></td>
                   <td>R$10</td>
                 </tr>
               </tbody>

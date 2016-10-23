@@ -36,7 +36,7 @@ export default class App extends Component {
         <header className="header">
           <div className="container">
             <header className="navbar-light navbar">
-              <a href="" className="navbar-brand">Starter kit</a>
+              <a href="" className="navbar-brand">Base kit</a>
               <ul className="nav navbar-nav navbar-right hidden-md-up">
               <Dropdown ref="fullDropdown" component="li" className="full-dropdown" hasTransition={true} open>
                   <DropdownButton
@@ -107,7 +107,7 @@ export default class App extends Component {
                     <a href="" className="dropdown-link">New groups</a>
                     <div className="dropdown-separator" />
                     <a href="" className="dropdown-link">Create ads</a>
-                    <a href="" className="dropdown-link">Advertising on Starter Kit</a>
+                    <a href="" className="dropdown-link">Advertising on Base Kit</a>
                     <div className="dropdown-separator" />
                     <a href="" className="dropdown-link">Blog</a>
                     <a href="" className="dropdown-link">About</a>
@@ -121,9 +121,9 @@ export default class App extends Component {
               </ul>
             </header>
             <div className="container container-md text-xs-center">
-              <h2 className="sp-xs-top-3 text-light text-weight-light">Just Random Text</h2>
-              <p className="text-md text-muted text-light">Stripe is the best way to accept payments online and in mobile apps. We handle billions of dollars every year for forward-thinking businesses around the world.</p>
-              <button className="btn btn-success btn-shadow text-uppercase sp-xs-right-2 sp-sm-bottom-none">Create stripe account</button>
+              <h2 className="sp-xs-top-3 text-light text-weight-light">Base Kit</h2>
+              <p className="text-md text-muted text-light">An awesome kit with components like Modal, Dropdown, Slide, NavigationDrawer and some really good styles (based on Bootstrap 4) written in scss.</p>
+              <a href="https://github.com/vinpac/base-kit"><button className="btn btn-success btn-shadow text-uppercase sp-xs-right-2 sp-sm-bottom-none"><i className="fa fa-github-alt sp-xs-right-1" aria-hidden="true"></i>View on GitHub</button></a>
               <button className="btn btn-text-accent text-uppercase btn-shadow bg-light" onClick={() => this.refs.modal.toggle() }>Open Modal</button>
             </div>
           </div>
